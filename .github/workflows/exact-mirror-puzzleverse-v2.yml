@@ -1,0 +1,156 @@
+name: Exact mirror PuzzleVerse V2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/exact-mirror-puzzleverse-v2.yml
+      - .github/scripts/exact-mirror-v2.py
+      - .github/scripts/exact-mirror-audit.cjs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: exact-mirror-puzzleverse-v2
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_ORIGIN: https://puzzleverse.syed40175.chatgpt.site
+      AUDIT_DIR: ${{ runner.temp }}/puzzleverse-audit
+      MIRROR_DIR: ${{ runner.temp }}/puzzleverse-mirror/site
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Prepare browser audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$AUDIT_DIR" "$(dirname "$MIRROR_DIR")"
+          cd "$AUDIT_DIR"
+          npm init -y >/dev/null 2>&1
+          npm install --silent --no-fund --no-audit \
+            playwright@1.55.0 \
+            pixelmatch@5.3.0 \
+            pngjs@7.0.0
+          npx playwright install --with-deps chromium
+          echo "NODE_PATH=$(npm root)" >> "$GITHUB_ENV"
+
+      - name: Discover what the live browser actually loads
+        shell: bash
+        run: |
+          set -euo pipefail
+          node .github/scripts/exact-mirror-audit.cjs discover \
+            "$SOURCE_ORIGIN" \
+            "$AUDIT_DIR/source-network.json"
+
+      - name: Copy every public same-origin resource without rewriting bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/exact-mirror-v2.py \
+            --origin "$SOURCE_ORIGIN" \
+            --output "$MIRROR_DIR" \
+            --network-manifest "$AUDIT_DIR/source-network.json" \
+            --manifest "$AUDIT_DIR/byte-manifest.json"
+
+          # Operational file required on the GitHub Pages domain. This is not
+          # substituted for any PuzzleVerse source file.
+          cp app-ads.txt "$MIRROR_DIR/app-ads.txt"
+
+          # Serve underscore-prefixed paths exactly if the source ever gains them.
+          touch "$MIRROR_DIR/.nojekyll"
+
+      - name: Verify browser rendering against the live source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --directory "$MIRROR_DIR" \
+            >"$AUDIT_DIR/local-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8765/ >/dev/null; then
+              break
+            fi
+            sleep 0.25
+          done
+
+          node .github/scripts/exact-mirror-audit.cjs compare \
+            "$SOURCE_ORIGIN" \
+            "http://127.0.0.1:8765" \
+            "$AUDIT_DIR"
+
+      - name: Replace the previous GitHub Pages copy
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='README.md' \
+            --exclude='app-ads.txt' \
+            "$MIRROR_DIR/" ./
+
+          cp "$MIRROR_DIR/app-ads.txt" app-ads.txt
+          touch .nojekyll
+
+          # Clean up the superseded V1 exact-mirror files if they were applied
+          # locally before V2. They are deliberately distinct from this workflow.
+          rm -f             .github/workflows/exact-mirror-puzzleverse.yml             .github/scripts/exact-mirror.py
+
+          git diff --check
+
+      - name: Commit the verified exact mirror to main
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "Repository already contains the verified source snapshot."
+          else
+            git commit -m "Mirror PuzzleVerse source exactly"
+            git push origin HEAD:main
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload verified mirror
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ env.MIRROR_DIR }}
+
+  deploy:
+    needs: mirror
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy verified exact mirror
+        id: deployment
+        uses: actions/deploy-pages@v4
