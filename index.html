@@ -1,337 +1,187 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0a0c0f" />
-  <meta name="description" content="Syed Ijlal Ayub — SAP Integration Consultant and Software Engineer working across enterprise integration and independent Android app development." />
+  <meta name="theme-color" content="#f7f7f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Android apps by Syed Ijlal Ayub — independent native Android products built with Kotlin and Jetpack Compose." />
   <meta name="author" content="Syed Ijlal Ayub" />
   <meta name="robots" content="index, follow" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="canonical" href="https://syedijlalayub.github.io/" />
-  <meta property="og:title" content="Syed Ijlal Ayub — SAP Integration & Android Engineering" />
-  <meta property="og:description" content="Enterprise SAP integration and independent Android product development." />
+
+  <meta property="og:title" content="Apps by Syed Ijlal Ayub" />
+  <meta property="og:description" content="Independent native Android apps built with Kotlin and Jetpack Compose." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://syedijlalayub.github.io/" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/57711072?v=4" />
-  <meta property="og:image:alt" content="Syed Ijlal Ayub — SAP Integration Consultant and Software Engineer" />
+  <meta property="og:image:alt" content="Syed Ijlal Ayub" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Syed Ijlal Ayub — SAP Integration & Android Engineering" />
-  <meta name="twitter:description" content="Enterprise SAP integration and independent Android product development." />
-  <title>Syed Ijlal Ayub — SAP Integration & Android Engineering</title>
+  <meta name="twitter:title" content="Apps by Syed Ijlal Ayub" />
+  <meta name="twitter:description" content="Independent native Android apps built with Kotlin and Jetpack Compose." />
+
+  <title>Apps by Syed Ijlal Ayub</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="showcase.css" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Syed Ijlal Ayub",
+    "@type": "CollectionPage",
+    "name": "Apps by Syed Ijlal Ayub",
     "url": "https://syedijlalayub.github.io/",
-    "jobTitle": "SAP Integration Consultant",
-    "sameAs": ["https://github.com/SyedIjlalAyub"],
-    "knowsAbout": [
-      "SAP Integration",
-      "Software Engineering",
-      "API Design",
-      "Kotlin",
-      "Jetpack Compose",
-      "Android Development",
-      "Python",
-      "Machine Learning"
-    ]
+    "description": "Independent Android apps by Syed Ijlal Ayub.",
+    "creator": {
+      "@type": "Person",
+      "name": "Syed Ijlal Ayub",
+      "url": "https://syedijlalayub.github.io/",
+      "sameAs": ["https://github.com/SyedIjlalAyub"]
+    },
+    "hasPart": [{
+      "@type": "SoftwareApplication",
+      "name": "PuzzleVerse",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android",
+      "description": "A native Android puzzle collection combining Sudoku, LogiGrid, Cryptograms, and LinkGrid.",
+      "author": {
+        "@type": "Person",
+        "name": "Syed Ijlal Ayub"
+      }
+    }]
   }
   </script>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header" id="top">
-    <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="Syed Ijlal Ayub home">
-        <span class="brand-mark" aria-hidden="true">SIA</span>
-        <span class="brand-copy">
-          <strong>Syed Ijlal Ayub</strong>
-          <small>Integration · Software</small>
-        </span>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Apps by Syed Ijlal Ayub">
+        <span class="brand-name">Syed Ijlal Ayub</span>
+        <span class="brand-separator" aria-hidden="true">/</span>
+        <span class="brand-context">Apps</span>
       </a>
 
-      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
-        <a href="#sap">SAP Integration</a>
-        <a href="android.html">Android Apps</a>
-        <a href="#experience">Experience</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#apps">Apps</a>
         <a href="#about">About</a>
+        <a href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
-
-      <div class="nav-actions">
-        <a class="nav-contact" href="#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch color theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3V1m0 22v-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M3 12H1m22 0h-2M5.64 18.36l-1.42 1.42M19.78 4.22l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        </button>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
-          <span></span><span></span>
-        </button>
-      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero section-shell hero-v5" aria-labelledby="hero-title">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="status-dot"></span>SAP Integration Consultant · Software Engineer</div>
-        <h1 id="hero-title">Enterprise systems.<br><span class="accent-word">Independent Android products.</span></h1>
-        <p class="hero-lede">My professional work is SAP integration. Separately, I design and build native Android applications as independent products.</p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#sap">SAP integration <span aria-hidden="true">↘</span></a>
-          <a class="button button-ghost" href="android.html">Android apps <span aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="hero-proof" aria-label="Engineering tracks">
-          <div><strong>Enterprise</strong><span>SAP integration · APIs · data flows</span></div>
-          <div><strong>Apps</strong><span>Android · Kotlin · Jetpack Compose</span></div>
-          <div><strong>Foundation</strong><span>Software engineering across both tracks</span></div>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-label="Two engineering tracks">
-        <div class="track-console spotlight">
-          <div class="track-console-head">
-            <span class="system-dot"></span>
-            <span>engineering.tracks</span>
-            <span class="system-live">ACTIVE</span>
-          </div>
-          <div class="track-lanes">
-            <div class="track-lane">
-              <span class="track-index">01</span>
-              <div>
-                <small>PROFESSIONAL</small>
-                <strong>SAP Integration</strong>
-                <p>Contracts · mapping · validation · operations</p>
-              </div>
-              <span class="track-state">ENTERPRISE</span>
-            </div>
-            <div class="track-divider" aria-hidden="true"><span>SEPARATE TRACKS</span></div>
-            <div class="track-lane">
-              <span class="track-index">02</span>
-              <div>
-                <small>INDEPENDENT</small>
-                <strong>Android Apps</strong>
-                <p>Kotlin · Compose · state · release quality</p>
-              </div>
-              <span class="track-state">PRODUCT</span>
-            </div>
-          </div>
-          <div class="system-log" aria-hidden="true">
-            <span><i>01</i> enterprise.integrate() <b>✓</b></span>
-            <span><i>02</i> android.build() <b>✓</b></span>
-            <span><i>03</i> quality.verify() <b>✓</b></span>
-          </div>
-        </div>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <p class="eyebrow">Independent Android development</p>
+      <h1 id="hero-title">Android apps,<br><span>built with care.</span></h1>
+      <p class="hero-copy">I design and build native Android apps with Kotlin and Jetpack Compose. This site is a home for the products I release and the work behind them.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#apps">View apps</a>
+        <a class="text-link" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <section class="signal-bar" aria-label="Engineering tracks at a glance">
-      <div class="section-shell signal-inner">
-        <span>01 / SAP Integration</span>
-        <span>02 / Enterprise APIs</span>
-        <span>03 / Android Apps</span>
-        <span>04 / Kotlin & Compose</span>
-      </div>
-    </section>
-
-    <section class="section-shell section" id="sap" aria-labelledby="sap-title">
-      <div class="section-heading split-heading reveal">
-        <div>
-          <p class="kicker">SAP integration</p>
-          <h2 id="sap-title">Business systems that exchange data predictably.</h2>
-        </div>
-        <p>This is my professional enterprise track: designing, implementing, and supporting integrations while keeping contracts, transformation logic, observability, and failure behavior explicit.</p>
-      </div>
-
-      <article class="sap-feature spotlight reveal">
-        <div class="sap-feature-head">
+    <section class="apps-section" id="apps" aria-labelledby="apps-title">
+      <div class="shell">
+        <div class="section-intro">
           <div>
-            <span class="domain-label">Enterprise engineering</span>
-            <h3>Integration is more than moving a payload.</h3>
+            <p class="eyebrow">Apps</p>
+            <h2 id="apps-title">Current work</h2>
           </div>
-          <span class="domain-status"><i></i>Professional focus</span>
-        </div>
-        <p class="sap-summary">Reliable integration means knowing what enters a boundary, how it is validated and transformed, what the receiving system can assume, and how support teams can diagnose the flow when something goes wrong.</p>
-
-        <div class="sap-pillars">
-          <div><span>01</span><strong>Design</strong><p>Interfaces, contracts, schemas, ownership, and integration boundaries.</p></div>
-          <div><span>02</span><strong>Build</strong><p>Mapping, validation, transformation, routing, and maintainable flow logic.</p></div>
-          <div><span>03</span><strong>Operate</strong><p>Tracing, diagnostics, failure paths, recovery, and production support.</p></div>
+          <p>Each app gets a concise record of what it is, what it includes, and how it is built.</p>
         </div>
 
-        <div class="flow-strip sap-flow" aria-hidden="true">
-          <span>SOURCE</span><i>→</i><span>CONTRACT</span><i>→</i><span>VALIDATE</span><i>→</i><span>TRANSFORM</span><i>→</i><span>DELIVER</span><i>→</i><span>TRACE</span>
-        </div>
-      </article>
-    </section>
-
-    <section class="section section-muted app-gateway" id="apps" aria-labelledby="apps-title">
-      <div class="section-shell">
-        <div class="app-gateway-grid">
-          <div class="section-heading reveal">
-            <p class="kicker">Android development</p>
-            <h2 id="apps-title">A separate home for the apps I build.</h2>
-            <p>My Android work is independent from my SAP consulting work. Each app is listed on a dedicated page with its purpose, technology, and product scope.</p>
-            <div class="gateway-actions">
-              <a class="button button-primary" href="android.html">View Android apps <span aria-hidden="true">→</span></a>
+        <article class="app-card" id="puzzleverse">
+          <div class="app-visual" aria-hidden="true">
+            <div class="app-icon">
+              <span class="app-icon-mark">PV</span>
+            </div>
+            <div class="app-visual-meta">
+              <span>Android</span>
+              <span>Closed testing</span>
             </div>
           </div>
 
-          <a class="app-preview spotlight reveal" href="android.html#puzzleverse" aria-label="View PuzzleVerse on the Android apps page">
-            <div class="app-preview-top">
-              <span class="domain-label">Current app · Closed testing</span>
-              <span class="app-preview-arrow" aria-hidden="true">↗</span>
+          <div class="app-content">
+            <div class="app-heading">
+              <div>
+                <p class="app-type">Puzzle &amp; logic</p>
+                <h3>PuzzleVerse</h3>
+              </div>
+              <span class="status"><i aria-hidden="true"></i>Closed testing</span>
             </div>
-            <div class="app-preview-visual" aria-hidden="true">
-              <div class="mini-board">
-                <span>7</span><span class="fill"></span><span></span><span>A</span>
-                <span></span><span>3</span><span class="fill"></span><span></span>
-                <span class="fill"></span><span></span><span class="goal">●</span><span>9</span>
-                <span>R</span><span class="fill"></span><span></span><span></span>
+
+            <p class="app-summary">A native Android puzzle collection bringing four logic games into one cohesive app: Sudoku, LogiGrid, Cryptograms, and LinkGrid.</p>
+
+            <div class="app-meta" aria-label="PuzzleVerse details">
+              <div>
+                <span>Built with</span>
+                <strong>Kotlin · Jetpack Compose · MVVM</strong>
+              </div>
+              <div>
+                <span>Platform</span>
+                <strong>Android</strong>
+              </div>
+              <div>
+                <span>Status</span>
+                <strong>Google Play closed testing</strong>
               </div>
             </div>
-            <div class="app-preview-copy">
-              <h3>PuzzleVerse</h3>
-              <p>Native puzzle collection in closed testing · Kotlin · Jetpack Compose · four puzzle systems.</p>
+
+            <div class="app-details">
+              <div>
+                <h4>Four puzzle systems</h4>
+                <p>Sudoku, LogiGrid, Cryptograms, and LinkGrid share one progression and navigation experience.</p>
+              </div>
+              <div>
+                <h4>Progress that persists</h4>
+                <p>Local-first game state, journey history, achievements, streaks, and Google Play Games cloud save.</p>
+              </div>
+              <div>
+                <h4>Built for release</h4>
+                <p>Accessibility, responsive layouts, regression testing, failure handling, and production-ready monetization flows.</p>
+              </div>
             </div>
-          </a>
+
+            <div class="tech-row" aria-label="PuzzleVerse technologies">
+              <span>Kotlin</span>
+              <span>Jetpack Compose</span>
+              <span>Material 3</span>
+              <span>Google Play Games</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="more-apps">
+          <p>More apps will be added here as they are released.</p>
         </div>
       </div>
     </section>
 
-    <section class="section-shell section" id="approach" aria-labelledby="approach-title">
-      <div class="section-heading split-heading reveal">
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="shell about-grid">
         <div>
-          <p class="kicker">Shared engineering standard</p>
-          <h2 id="approach-title">Different domains. The same discipline.</h2>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Focused products, built end to end.</h2>
         </div>
-        <p>SAP integrations and Android applications are separate bodies of work, but both benefit from explicit contracts, deliberate state, diagnosable failure, and release-level attention to detail.</p>
-      </div>
-
-      <div class="capability-grid">
-        <article class="capability spotlight reveal">
-          <span class="capability-number">01</span>
-          <h3>Clear boundaries</h3>
-          <p>Define inputs, outputs, ownership, validation, and assumptions before implementation details obscure the contract.</p>
-          <div class="capability-meta">Interfaces · APIs · Components</div>
-        </article>
-        <article class="capability spotlight reveal">
-          <span class="capability-number">02</span>
-          <h3>Explicit state</h3>
-          <p>Model lifecycle and persistence deliberately so retries, interruptions, and resumed work remain predictable.</p>
-          <div class="capability-meta">Lifecycle · Persistence · Recovery</div>
-        </article>
-        <article class="capability spotlight reveal">
-          <span class="capability-number">03</span>
-          <h3>Observable failure</h3>
-          <p>Make it possible to determine what happened, where it failed, and what can safely happen next.</p>
-          <div class="capability-meta">Tracing · Validation · Diagnostics</div>
-        </article>
-        <article class="capability spotlight reveal">
-          <span class="capability-number">04</span>
-          <h3>Release quality</h3>
-          <p>Testing, accessibility, interaction feedback, and operational behavior are part of engineering correctness.</p>
-          <div class="capability-meta">Testing · UX · Release discipline</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-muted" id="experience" aria-labelledby="experience-title">
-      <div class="section-shell experience-layout">
-        <div class="section-heading reveal">
-          <p class="kicker">Professional experience</p>
-          <h2 id="experience-title">Software background.<br>SAP integration depth.</h2>
-          <p>My professional experience is centered on enterprise technology and SAP technical consulting.</p>
-        </div>
-
-        <div class="timeline reveal">
-          <article class="timeline-item current">
-            <div class="timeline-date">2025 — Present</div>
-            <div class="timeline-content">
-              <div class="timeline-title"><h3>IBM Pakistan</h3><span>Current</span></div>
-              <p>SAP Technical Consultant</p>
-              <small>Enterprise integration and technical consulting.</small>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">Previously</div>
-            <div class="timeline-content"><h3>Siemens Pakistan</h3><p>Enterprise technology experience</p></div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">Previously</div>
-            <div class="timeline-content"><h3>TallyMarks Consulting</h3><p>SAP and integration consulting experience</p></div>
-          </article>
-          <article class="timeline-item education">
-            <div class="timeline-date">2019</div>
-            <div class="timeline-content"><h3>BSc Computer Software Engineering</h3><p>Software engineering foundation</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-shell section" id="about" aria-labelledby="about-title">
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="kicker">About</p>
-          <h2 id="about-title">Two tracks, one software-engineering foundation.</h2>
-          <p>Enterprise integration taught me to think carefully about boundaries, contracts, observability, and failure. Building Android products exercises a different set of concerns: state, interaction, accessibility, persistence, and release polish.</p>
-          <p>I keep the work separate because the context is different, while carrying the same engineering habits into both.</p>
-        </div>
-
-        <div class="principles reveal" aria-label="Engineering principles">
-          <div class="principle"><span>01</span><div><h3>Read the system before rewriting it.</h3><p>Understanding existing behavior prevents fixes that break real assumptions.</p></div></div>
-          <div class="principle"><span>02</span><div><h3>Test the path nobody wants.</h3><p>Retries, interruptions, stale state, and failures deserve first-class attention.</p></div></div>
-          <div class="principle"><span>03</span><div><h3>Leave the next change easier.</h3><p>Clear naming, visible state, and focused boundaries are part of the deliverable.</p></div></div>
-        </div>
-      </div>
-
-      <div class="stack-split reveal">
-        <div class="stack-panel spotlight">
-          <div class="stack-title"><span class="terminal-prompt">$</span> sap --toolkit</div>
-          <div class="stack-list">
-            <span>SAP Integration</span><span>API Design</span><span>Data Mapping</span><span>Validation</span><span>Diagnostics</span><span>Git</span>
-          </div>
-        </div>
-        <div class="stack-panel spotlight">
-          <div class="stack-title"><span class="terminal-prompt">$</span> android --toolkit</div>
-          <div class="stack-list">
-            <span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>MVVM</span><span>Material 3</span><span>Testing</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact" aria-labelledby="contact-title">
-      <div class="section-shell contact-inner reveal">
-        <div class="contact-index" aria-hidden="true">05</div>
-        <p class="kicker">Contact</p>
-        <h2 id="contact-title">Enterprise integration or <span class="accent-word">software engineering?</span></h2>
-        <p>My professional focus is SAP integration. My independent Android work is documented separately on the apps page.</p>
-        <div class="contact-actions">
-          <a class="button button-primary" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a>
-          <a class="button button-ghost" href="android.html">Android apps <span aria-hidden="true">→</span></a>
-          <button class="button button-ghost copy-link" type="button" data-copy="https://syedijlalayub.github.io/">Copy site link</button>
+        <div class="about-copy">
+          <p>I build independent Android apps from product idea through implementation, testing, and release. I care about clear interaction, reliable state, accessibility, and the less-visible details that make an app hold together in everyday use.</p>
+          <p>The portfolio will grow with the apps themselves. No placeholders, no concept projects—only products I am actually building or shipping.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="section-shell footer-inner">
-      <div><strong>Syed Ijlal Ayub</strong><span>SAP Integration Consultant · Software Engineer</span></div>
-      <p>© <span id="year"></span> · Plain HTML, CSS &amp; JavaScript.</p>
+    <div class="shell footer-inner">
+      <div>
+        <strong>Syed Ijlal Ayub</strong>
+        <span>Independent Android apps</span>
+      </div>
+      <a href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub ↗</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
-
-  <div class="toast" role="status" aria-live="polite">Site link copied</div>
 </body>
 </html>
