@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/exact-mirror-puzzleverse-v2.yml b/.github/workflows/exact-mirror-puzzleverse-v2.yml
+--- a/.github/workflows/exact-mirror-puzzleverse-v2.yml
++++ b/.github/workflows/exact-mirror-puzzleverse-v2.yml
+@@ -24,8 +24,6 @@ jobs:
+     runs-on: ubuntu-latest
+     env:
+       SOURCE_ORIGIN: https://puzzleverse.syed40175.chatgpt.site
+-      AUDIT_DIR: ${{ runner.temp }}/puzzleverse-audit
+-      MIRROR_DIR: ${{ runner.temp }}/puzzleverse-mirror/site
+
+     steps:
+       - name: Check out main
+@@ -34,6 +32,13 @@ jobs:
+           ref: main
+           fetch-depth: 0
+
++      - name: Initialize runner paths
++        shell: bash
++        run: |
++          set -euo pipefail
++          echo "AUDIT_DIR=$RUNNER_TEMP/puzzleverse-audit" >> "$GITHUB_ENV"
++          echo "MIRROR_DIR=$RUNNER_TEMP/puzzleverse-mirror/site" >> "$GITHUB_ENV"
++
+       - name: Prepare browser audit
+         shell: bash
+         run: |
