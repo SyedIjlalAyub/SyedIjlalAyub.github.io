@@ -3,41 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0d10" />
-  <meta name="description" content="Syed Ijlal Ayub — SAP Integration Consultant and Software Engineer building reliable integrations, Android products, and practical software." />
+  <meta name="theme-color" content="#0a0c0f" />
+  <meta name="description" content="Syed Ijlal Ayub — SAP Integration Consultant and Software Engineer focused on enterprise integration, Android engineering, and practical software." />
   <meta name="author" content="Syed Ijlal Ayub" />
-  <meta property="og:title" content="Syed Ijlal Ayub — Software Engineer & SAP Integration Consultant" />
-  <meta property="og:description" content="Enterprise integration, Android engineering, and thoughtful software." />
+  <meta property="og:title" content="Syed Ijlal Ayub — SAP Integration Consultant & Software Engineer" />
+  <meta property="og:description" content="Enterprise integration with a product engineer's mindset." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://syedijlalayub.github.io/" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/57711072?v=4" />
   <meta name="twitter:card" content="summary" />
-  <title>Syed Ijlal Ayub — Software Engineer</title>
+  <title>Syed Ijlal Ayub — Integration & Software Engineering</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header" id="top">
     <div class="nav-shell">
       <a class="brand" href="#top" aria-label="Syed Ijlal Ayub home">
         <span class="brand-mark" aria-hidden="true">SIA</span>
-        <span class="brand-name">Syed Ijlal Ayub</span>
+        <span class="brand-copy">
+          <strong>Syed Ijlal Ayub</strong>
+          <small>Integration · Software</small>
+        </span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
+      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
       </nav>
 
-      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3V1m0 22v-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M3 12H1m22 0h-2M5.64 18.36l-1.42 1.42M19.78 4.22l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-      </button>
+      <div class="nav-actions">
+        <a class="nav-contact" href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3V1m0 22v-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M3 12H1m22 0h-2M5.64 18.36l-1.42 1.42M19.78 4.22l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -45,122 +55,203 @@
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
         <div class="eyebrow"><span class="status-dot"></span>SAP Integration Consultant · Software Engineer</div>
-        <h1 id="hero-title">I make complex systems <span class="accent-word">work together.</span></h1>
-        <p class="hero-lede">I design integrations, build software, and turn complicated technical requirements into dependable products — from enterprise interfaces to Android experiences.</p>
+        <h1 id="hero-title">Enterprise integration.<br><span class="accent-word">Product builder’s mindset.</span></h1>
+        <p class="hero-lede">I connect business-critical systems and build software that holds up beyond the happy path — from SAP integrations to native Android products.</p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="button button-primary" href="#work">See selected work <span aria-hidden="true">↘</span></a>
           <a class="button button-ghost" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
         </div>
 
-        <div class="hero-meta" aria-label="Professional focus">
-          <div><span class="meta-label">Based in</span><strong>Pakistan</strong></div>
-          <div><span class="meta-label">Focused on</span><strong>Integration · Android · AI</strong></div>
+        <div class="hero-proof" aria-label="Current engineering focus">
+          <div><strong>Enterprise</strong><span>SAP integration & APIs</span></div>
+          <div><strong>Product</strong><span>Android · Kotlin · Compose</span></div>
+          <div><strong>Next</strong><span>Applied machine learning</span></div>
         </div>
       </div>
 
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="code-window">
-          <div class="window-bar"><span></span><span></span><span></span><small>integration.flow</small></div>
-          <pre><code><span class="code-muted">01</span>  <span class="code-key">source</span>   <span class="code-op">→</span> SAP
-<span class="code-muted">02</span>  <span class="code-key">map</span>      <span class="code-op">→</span> transform()
-<span class="code-muted">03</span>  <span class="code-key">validate</span> <span class="code-op">→</span> contract
-<span class="code-muted">04</span>  <span class="code-key">deliver</span>  <span class="code-op">→</span> target
-<span class="code-muted">05</span>
-<span class="code-muted">06</span>  <span class="code-comment">// reliable by design</span>
-<span class="code-muted">07</span>  <span class="code-good">status: connected</span></code></pre>
+      <div class="hero-visual reveal" aria-label="Engineering profile visualization">
+        <div class="system-card">
+          <div class="system-card-head">
+            <span class="system-dot"></span>
+            <span>engineering.profile</span>
+            <span class="system-live">ACTIVE</span>
+          </div>
+          <div class="system-map">
+            <div class="system-node system-node-source">
+              <span class="node-label">SYSTEMS</span>
+              <strong>SAP</strong>
+              <small>business data</small>
+            </div>
+            <div class="system-line line-one"></div>
+            <div class="system-node system-node-core">
+              <span class="node-label">ENGINEERING</span>
+              <strong>Integrate</strong>
+              <small>map · validate · deliver</small>
+            </div>
+            <div class="system-line line-two"></div>
+            <div class="system-node system-node-target">
+              <span class="node-label">PRODUCT</span>
+              <strong>Software</strong>
+              <small>reliable by design</small>
+            </div>
+          </div>
+          <div class="system-log" aria-hidden="true">
+            <span><i>01</i> contract.validate() <b>✓</b></span>
+            <span><i>02</i> failure.handle() <b>✓</b></span>
+            <span><i>03</i> experience.refine() <b>✓</b></span>
+          </div>
         </div>
-        <div class="orbit orbit-a"></div>
-        <div class="orbit orbit-b"></div>
       </div>
     </section>
 
-    <section class="ticker" aria-label="Core technologies">
-      <div class="ticker-track">
-        <span>SAP Integration</span><i>◆</i><span>Kotlin</span><i>◆</i><span>Jetpack Compose</span><i>◆</i><span>REST APIs</span><i>◆</i><span>Git</span><i>◆</i><span>CI/CD</span><i>◆</i><span>Python</span><i>◆</i><span>System Design</span>
+    <section class="signal-bar" aria-label="Technical focus">
+      <div class="section-shell signal-inner">
+        <span>01 / SAP Integration</span>
+        <span>02 / API & Data Flows</span>
+        <span>03 / Kotlin & Compose</span>
+        <span>04 / Release Engineering</span>
       </div>
     </section>
 
     <section class="section-shell section" id="work" aria-labelledby="work-title">
-      <div class="section-heading reveal">
-        <p class="kicker">Selected work</p>
-        <h2 id="work-title">Built for the real world.</h2>
-        <p>Projects and problem spaces where engineering quality, usability, and operational reliability matter.</p>
+      <div class="section-heading split-heading reveal">
+        <div>
+          <p class="kicker">Selected work</p>
+          <h2 id="work-title">Engineering that survives contact with reality.</h2>
+        </div>
+        <p>Some work is public. Some enterprise work cannot be. The common thread is dependable behavior, clear interfaces, and attention to the details that surface in production.</p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card project-featured reveal">
-          <div class="project-topline">
-            <span class="project-index">01</span>
-            <span class="project-state">In development</span>
+      <div class="work-stack">
+        <article class="case-card case-featured reveal">
+          <div class="case-rail">
+            <span>01</span>
+            <span>Android Product</span>
           </div>
-          <div class="puzzle-mark" aria-hidden="true">
-            <span></span><span class="filled"></span><span></span>
-            <span class="filled"></span><span></span><span class="filled"></span>
-            <span></span><span class="filled"></span><span></span>
-          </div>
-          <div class="project-copy">
-            <p class="project-type">Android · Product Engineering</p>
-            <h3>PuzzleVerse</h3>
-            <p>A native Android puzzle collection built with Kotlin and Jetpack Compose, combining multiple logic games in one cohesive product with progression, achievements, cloud-aware persistence, accessibility, and release-grade UX.</p>
-            <div class="tag-row"><span>Kotlin</span><span>Compose</span><span>MVVM</span><span>Material 3</span></div>
+          <div class="case-content">
+            <div class="case-header">
+              <div>
+                <p class="case-kicker">Independent product · Pre-release</p>
+                <h3>PuzzleVerse</h3>
+              </div>
+              <a class="case-link" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer" aria-label="Open Syed Ijlal Ayub on GitHub">GitHub ↗</a>
+            </div>
+            <p class="case-summary">A native Android puzzle collection designed as a cohesive product rather than four isolated games. The engineering spans generators, game state, persistence, accessibility, cloud-aware behavior, release hardening, and monetization boundaries.</p>
+
+            <div class="case-grid">
+              <div class="case-facts">
+                <div><span>Game systems</span><strong>Sudoku · LogiGrid · Cryptograms · LinkGrid</strong></div>
+                <div><span>Architecture</span><strong>Kotlin · Jetpack Compose · MVVM</strong></div>
+                <div><span>Product concerns</span><strong>Progression · Accessibility · Persistence · Testing</strong></div>
+              </div>
+              <div class="puzzle-board" aria-hidden="true">
+                <div class="board-label">PUZZLEVERSE / 4 SYSTEMS</div>
+                <div class="board-grid">
+                  <span class="cell n">7</span><span class="cell fill"></span><span class="cell"></span><span class="cell code">A</span>
+                  <span class="cell"></span><span class="cell n">3</span><span class="cell fill"></span><span class="cell"></span>
+                  <span class="cell fill"></span><span class="cell"></span><span class="cell goal">●</span><span class="cell n">9</span>
+                  <span class="cell code">R</span><span class="cell fill"></span><span class="cell"></span><span class="cell"></span>
+                </div>
+              </div>
+            </div>
           </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-topline">
-            <span class="project-index">02</span>
-            <span class="project-state">Enterprise</span>
+        <article class="case-card reveal">
+          <div class="case-rail">
+            <span>02</span>
+            <span>Enterprise</span>
           </div>
-          <div class="project-copy">
-            <p class="project-type">SAP · Integration Engineering</p>
-            <h3>Enterprise integrations</h3>
-            <p>Designing and supporting dependable interfaces between business systems, with emphasis on clean contracts, robust transformations, traceability, and maintainable integration flows.</p>
-            <div class="tag-row"><span>SAP</span><span>APIs</span><span>Integration</span><span>Data Mapping</span></div>
+          <div class="case-content compact-case">
+            <div class="case-header">
+              <div>
+                <p class="case-kicker">SAP · Integration Engineering</p>
+                <h3>Business systems that exchange data predictably.</h3>
+              </div>
+            </div>
+            <p class="case-summary">Designing, implementing, and supporting integration flows between enterprise systems. I focus on contracts, transformation logic, observability, failure handling, and maintainability — without exposing confidential client implementation details.</p>
+            <div class="flow-strip" aria-hidden="true">
+              <span>SOURCE</span><i>→</i><span>VALIDATE</span><i>→</i><span>TRANSFORM</span><i>→</i><span>DELIVER</span><i>→</i><span>TRACE</span>
+            </div>
           </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-topline">
-            <span class="project-index">03</span>
-            <span class="project-state">Exploration</span>
+        <article class="case-card reveal">
+          <div class="case-rail">
+            <span>03</span>
+            <span>Learning Track</span>
           </div>
-          <div class="project-copy">
-            <p class="project-type">Engineering · Machine Learning</p>
-            <h3>Applied ML learning</h3>
-            <p>Extending a software-engineering foundation into machine learning: building intuition around data, models, evaluation, and how ML capabilities fit into production software systems.</p>
-            <div class="tag-row"><span>Python</span><span>ML</span><span>Data</span><span>Experimentation</span></div>
+          <div class="case-content compact-case">
+            <div class="case-header">
+              <div>
+                <p class="case-kicker">Software Engineering · Machine Learning</p>
+                <h3>Building ML understanding from engineering fundamentals.</h3>
+              </div>
+            </div>
+            <p class="case-summary">Developing practical machine-learning skills around data preparation, model evaluation, experimentation, and the production concerns that turn a model into a usable software capability.</p>
+            <div class="tag-row"><span>Python</span><span>Data</span><span>Models</span><span>Evaluation</span><span>Production thinking</span></div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section section-muted" id="experience" aria-labelledby="experience-title">
-      <div class="section-shell experience-layout">
+    <section class="section section-muted" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="kicker">Capabilities</p>
+          <h2 id="capabilities-title">From interface contract to user interaction.</h2>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability reveal">
+            <span class="capability-number">01</span>
+            <h3>Integration engineering</h3>
+            <p>Interfaces, APIs, mapping, transformation, validation, operational diagnostics, and the failure paths between systems.</p>
+            <div class="capability-meta">SAP · APIs · Data flows</div>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-number">02</span>
+            <h3>Software engineering</h3>
+            <p>Maintainable application logic, state management, testing, debugging, source control, and release-oriented development.</p>
+            <div class="capability-meta">Kotlin · Python · Git · CI/CD</div>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-number">03</span>
+            <h3>Product engineering</h3>
+            <p>Turning requirements into coherent behavior, with attention to UX, accessibility, persistence, edge cases, and polish.</p>
+            <div class="capability-meta">Android · Compose · Material 3</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section" id="experience" aria-labelledby="experience-title">
+      <div class="experience-layout">
         <div class="section-heading reveal">
           <p class="kicker">Experience</p>
-          <h2 id="experience-title">Enterprise context.<br />Engineer’s mindset.</h2>
-          <p>I work where software, business systems, and operational requirements meet.</p>
+          <h2 id="experience-title">Software background.<br>Enterprise depth.</h2>
+          <p>I work at the intersection of technical implementation and business-critical systems.</p>
         </div>
 
         <div class="timeline reveal">
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
+          <article class="timeline-item current">
             <div class="timeline-date">2025 — Present</div>
-            <div class="timeline-content"><h3>IBM Pakistan</h3><p>SAP Technical Consultant</p></div>
+            <div class="timeline-content">
+              <div class="timeline-title"><h3>IBM Pakistan</h3><span>Current</span></div>
+              <p>SAP Technical Consultant</p>
+              <small>Enterprise integration and technical consulting.</small>
+            </div>
           </article>
           <article class="timeline-item">
-            <div class="timeline-marker"></div>
             <div class="timeline-date">Previously</div>
             <div class="timeline-content"><h3>Siemens Pakistan</h3><p>Enterprise technology experience</p></div>
           </article>
           <article class="timeline-item">
-            <div class="timeline-marker"></div>
             <div class="timeline-date">Previously</div>
             <div class="timeline-content"><h3>TallyMarks Consulting</h3><p>SAP and integration consulting experience</p></div>
           </article>
-          <article class="timeline-item timeline-education">
-            <div class="timeline-marker"></div>
+          <article class="timeline-item education">
             <div class="timeline-date">2019</div>
             <div class="timeline-content"><h3>BSc Computer Software Engineering</h3><p>Software engineering foundation</p></div>
           </article>
@@ -168,37 +259,38 @@
       </div>
     </section>
 
-    <section class="section-shell section" id="about" aria-labelledby="about-title">
-      <div class="about-grid">
+    <section class="section section-muted" id="about" aria-labelledby="about-title">
+      <div class="section-shell about-grid">
         <div class="about-copy reveal">
-          <p class="kicker">About</p>
-          <h2 id="about-title">I care about the space between “it works” and “it works well.”</h2>
-          <p>My work spans enterprise integration and product engineering. I enjoy taking systems with many moving pieces and making the result simpler: clearer interfaces, predictable behavior, maintainable code, and a better experience for the people using it.</p>
-          <p>Outside day-to-day consulting, I build Android products and keep expanding into machine learning and intelligent systems.</p>
+          <p class="kicker">How I work</p>
+          <h2 id="about-title">“Working” is the baseline. Predictable, understandable, maintainable is the goal.</h2>
+          <p>Integration work taught me to think carefully about contracts, edge cases, observability, and what happens when assumptions break. Product work adds another layer: the software also has to feel coherent to the person using it.</p>
+          <p>That combination shapes how I approach engineering problems — understand the system, reduce ambiguity, test the boundaries, and keep the implementation readable enough to change later.</p>
         </div>
 
         <div class="principles reveal" aria-label="Engineering principles">
-          <div class="principle"><span>01</span><div><h3>Clarity over cleverness</h3><p>Readable systems are easier to operate, debug, and evolve.</p></div></div>
-          <div class="principle"><span>02</span><div><h3>Reliability is a feature</h3><p>Happy paths are only the beginning; failure behavior matters.</p></div></div>
-          <div class="principle"><span>03</span><div><h3>Details shape products</h3><p>Small interaction and accessibility decisions compound.</p></div></div>
+          <div class="principle"><span>01</span><div><h3>Make failure behavior explicit.</h3><p>Systems are defined as much by recovery paths as by success paths.</p></div></div>
+          <div class="principle"><span>02</span><div><h3>Prefer clarity over cleverness.</h3><p>Readable code and visible system behavior make future changes safer.</p></div></div>
+          <div class="principle"><span>03</span><div><h3>Treat UX details as engineering details.</h3><p>Accessibility, feedback, state, and timing all affect correctness in practice.</p></div></div>
         </div>
       </div>
 
-      <div class="stack-panel reveal">
+      <div class="section-shell stack-panel reveal">
         <div class="stack-title"><span class="terminal-prompt">$</span> toolkit --current</div>
         <div class="stack-list">
-          <span>SAP Integration</span><span>API Design</span><span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>MVVM</span><span>Git</span><span>CI/CD</span><span>Python</span><span>Machine Learning</span>
+          <span>SAP Integration</span><span>API Design</span><span>Data Mapping</span><span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>MVVM</span><span>Git</span><span>CI/CD</span><span>Python</span><span>Machine Learning</span>
         </div>
       </div>
     </section>
 
     <section class="contact section" id="contact" aria-labelledby="contact-title">
       <div class="section-shell contact-inner reveal">
+        <div class="contact-index" aria-hidden="true">04</div>
         <p class="kicker">Contact</p>
-        <h2 id="contact-title">Have a system to connect<br />or a product to build?</h2>
-        <p>I’m always interested in thoughtful engineering problems and useful software.</p>
+        <h2 id="contact-title">Building something that needs to <span class="accent-word">connect, behave, or scale?</span></h2>
+        <p>My public work lives on GitHub. For professional context, this site is the concise version of what I build and how I think.</p>
         <div class="contact-actions">
-          <a class="button button-primary" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a>
           <button class="button button-ghost copy-link" type="button" data-copy="https://syedijlalayub.github.io/">Copy site link</button>
         </div>
       </div>
@@ -207,8 +299,8 @@
 
   <footer class="site-footer">
     <div class="section-shell footer-inner">
-      <p>© <span id="year"></span> Syed Ijlal Ayub</p>
-      <p>Designed &amp; built with plain HTML, CSS and JavaScript.</p>
+      <div><strong>Syed Ijlal Ayub</strong><span>SAP Integration Consultant · Software Engineer</span></div>
+      <p>© <span id="year"></span> · Plain HTML, CSS &amp; JavaScript.</p>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
