@@ -14,7 +14,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://syedijlalayub.github.io/" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/57711072?v=4" />
+  <meta property="og:image:alt" content="Syed Ijlal Ayub — SAP Integration Consultant and Software Engineer" />
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Syed Ijlal Ayub — Integration & Software Engineering" />
+  <meta name="twitter:description" content="Enterprise integration with a product engineer's mindset." />
   <title>Syed Ijlal Ayub — Integration & Software Engineering</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <script type="application/ld+json">
@@ -56,7 +59,7 @@
 
       <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
         <a href="#work">Work</a>
-        <a href="#capabilities">Capabilities</a>
+        <a href="#capabilities">Approach</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
       </nav>
@@ -89,7 +92,7 @@
         <div class="hero-proof" aria-label="Current engineering focus">
           <div><strong>Enterprise</strong><span>SAP integration & APIs</span></div>
           <div><strong>Product</strong><span>Android · Kotlin · Compose</span></div>
-          <div><strong>Learning</strong><span>Applied machine learning</span></div>
+          <div><strong>Exploring</strong><span>Applied machine learning</span></div>
         </div>
       </div>
 
@@ -128,12 +131,12 @@
       </div>
     </section>
 
-    <section class="signal-bar" aria-label="Technical focus">
+    <section class="signal-bar" aria-label="Engineering principles at a glance">
       <div class="section-shell signal-inner">
-        <span>01 / SAP Integration</span>
-        <span>02 / API & Data Flows</span>
-        <span>03 / Kotlin & Compose</span>
-        <span>04 / Release Engineering</span>
+        <span>01 / Contracts first</span>
+        <span>02 / Explicit state</span>
+        <span>03 / Observable failure</span>
+        <span>04 / Release discipline</span>
       </div>
     </section>
 
@@ -217,29 +220,42 @@
 
     <section class="section section-muted" id="capabilities" aria-labelledby="capabilities-title">
       <div class="section-shell">
-        <div class="section-heading reveal">
-          <p class="kicker">Capabilities</p>
-          <h2 id="capabilities-title">From interface contract to user interaction.</h2>
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="kicker">Engineering approach</p>
+            <h2 id="capabilities-title">Make the boundaries clear. Make the behavior explainable.</h2>
+          </div>
+          <p>I use the same engineering habits across integration and product work: define the contract, make state explicit, expose failure clearly, and finish the experience all the way to release.</p>
+        </div>
+
+        <div class="approach-flow reveal" aria-hidden="true">
+          <span>Business system</span><i>→</i><span>Contract</span><i>→</i><span>State</span><i>→</i><span>Behavior</span><i>→</i><span>User</span>
         </div>
 
         <div class="capability-grid">
           <article class="capability spotlight reveal">
             <span class="capability-number">01</span>
-            <h3>Integration engineering</h3>
-            <p>Interfaces, APIs, mapping, transformation, validation, operational diagnostics, and the failure paths between systems.</p>
-            <div class="capability-meta">SAP · APIs · Data flows</div>
+            <h3>Contract thinking</h3>
+            <p>Define inputs, outputs, ownership, validation, and failure semantics before complexity spreads through the implementation.</p>
+            <div class="capability-meta">Interfaces · APIs · Schemas</div>
           </article>
           <article class="capability spotlight reveal">
             <span class="capability-number">02</span>
-            <h3>Software engineering</h3>
-            <p>Maintainable application logic, state management, testing, debugging, source control, and release-oriented development.</p>
-            <div class="capability-meta">Kotlin · Python · Git · CI/CD</div>
+            <h3>State &amp; recovery</h3>
+            <p>Model lifecycle and persistence deliberately so interrupted flows, resumed games, and edge cases remain predictable.</p>
+            <div class="capability-meta">Lifecycle · Persistence · Recovery</div>
           </article>
           <article class="capability spotlight reveal">
             <span class="capability-number">03</span>
-            <h3>Product engineering</h3>
-            <p>Turning requirements into coherent behavior, with attention to UX, accessibility, persistence, edge cases, and polish.</p>
-            <div class="capability-meta">Android · Compose · Material 3</div>
+            <h3>Diagnostics by design</h3>
+            <p>Make it possible to answer what happened, where it failed, and what can safely happen next without guesswork.</p>
+            <div class="capability-meta">Tracing · Validation · Failure paths</div>
+          </article>
+          <article class="capability spotlight reveal">
+            <span class="capability-number">04</span>
+            <h3>Finish the product</h3>
+            <p>Treat accessibility, interaction feedback, regression checks, and release behavior as part of engineering correctness.</p>
+            <div class="capability-meta">UX · Accessibility · Release quality</div>
           </article>
         </div>
       </div>
@@ -302,9 +318,9 @@
         </div>
 
         <div class="principles reveal" aria-label="Engineering principles">
-          <div class="principle"><span>01</span><div><h3>Make failure behavior explicit.</h3><p>Systems are defined as much by recovery paths as by success paths.</p></div></div>
-          <div class="principle"><span>02</span><div><h3>Prefer clarity over cleverness.</h3><p>Readable code and visible system behavior make future changes safer.</p></div></div>
-          <div class="principle"><span>03</span><div><h3>Treat UX details as engineering details.</h3><p>Accessibility, feedback, state, and timing all affect correctness in practice.</p></div></div>
+          <div class="principle"><span>01</span><div><h3>Read the system before rewriting it.</h3><p>Understanding existing behavior prevents elegant fixes that break real assumptions.</p></div></div>
+          <div class="principle"><span>02</span><div><h3>Test the path nobody wants.</h3><p>Retries, interruptions, stale state, and failures deserve the same design attention as success.</p></div></div>
+          <div class="principle"><span>03</span><div><h3>Leave the next change easier.</h3><p>Clear naming, visible state, and focused boundaries are part of the deliverable.</p></div></div>
         </div>
       </div>
 
@@ -320,8 +336,8 @@
       <div class="section-shell contact-inner reveal">
         <div class="contact-index" aria-hidden="true">04</div>
         <p class="kicker">Contact</p>
-        <h2 id="contact-title">Building something that needs to <span class="accent-word">connect, behave, or scale?</span></h2>
-        <p>My public work lives on GitHub. For professional context, this site is the concise version of what I build and how I think.</p>
+        <h2 id="contact-title">If the hard part lives between <span class="accent-word">systems, state, and users,</span> I’m interested.</h2>
+        <p>My public work lives on GitHub. This site is the concise version of how I approach integration, software, and product engineering.</p>
         <div class="contact-actions">
           <a class="button button-primary" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">Open GitHub <span aria-hidden="true">↗</span></a>
           <button class="button button-ghost copy-link" type="button" data-copy="https://syedijlalayub.github.io/">Copy site link</button>

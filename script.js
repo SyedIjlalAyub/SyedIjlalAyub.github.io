@@ -14,7 +14,8 @@
     savedTheme = null;
   }
 
-  const preferredLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const colorScheme = window.matchMedia('(prefers-color-scheme: light)');
+  const preferredLight = colorScheme.matches;
 
   const setTheme = (theme, persist = true) => {
     root.dataset.theme = theme;
@@ -31,8 +32,13 @@
     setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
   });
 
+  colorScheme.addEventListener?.('change', (event) => {
+    if (!savedTheme) setTheme(event.matches ? 'light' : 'dark', false);
+  });
+
   const closeMenu = () => {
     nav?.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
     menuToggle?.setAttribute('aria-expanded', 'false');
     menuToggle?.setAttribute('aria-label', 'Open navigation');
   };
@@ -42,6 +48,7 @@
     menuToggle.setAttribute('aria-expanded', String(!open));
     menuToggle.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
     nav?.classList.toggle('is-open', !open);
+    document.body.classList.toggle('nav-open', !open);
   });
 
   nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
@@ -130,14 +137,34 @@
   const toast = document.querySelector('.toast');
   let toastTimer;
 
+  const copyText = async (value) => {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(value);
+      return;
+    }
+    const textarea = document.createElement('textarea');
+    textarea.value = value;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    const copied = document.execCommand('copy');
+    textarea.remove();
+    if (!copied) throw new Error('Copy unavailable');
+  };
+
   copyButton?.addEventListener('click', async () => {
+    const value = copyButton.dataset.copy || window.location.href;
     try {
-      await navigator.clipboard.writeText(copyButton.dataset.copy || window.location.href);
+      await copyText(value);
       toast?.classList.add('is-visible');
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => toast?.classList.remove('is-visible'), 1800);
     } catch {
-      copyButton.textContent = 'syedijlalayub.github.io';
+      const original = copyButton.textContent;
+      copyButton.textContent = 'Copy unavailable';
+      setTimeout(() => { copyButton.textContent = original; }, 1800);
     }
   });
 })();
