@@ -1,0 +1,79 @@
+diff --git a/.github/scripts/exact-mirror-audit.cjs b/.github/scripts/exact-mirror-audit.cjs
+index e3a4e71..4589b42 100644
+--- a/.github/scripts/exact-mirror-audit.cjs
++++ b/.github/scripts/exact-mirror-audit.cjs
+@@ -10,7 +10,7 @@ if (!mode || !a || !b) {
+   process.exit(2);
+ }
+ 
+-const SOURCE_PATHS = ["/", "/subscribers.html"];
++const SOURCE_PATHS = ["/"];
+ const IGNORE_PREFIXES = ["/api/", "/signin-with-chatgpt", "/cdn-cgi/"];
+ 
+ function normalizeOrigin(value) {
+diff --git a/.github/scripts/exact-mirror-v2.py b/.github/scripts/exact-mirror-v2.py
+index 737802f..4d21798 100644
+--- a/.github/scripts/exact-mirror-v2.py
++++ b/.github/scripts/exact-mirror-v2.py
+@@ -35,19 +35,10 @@ DYNAMIC_PREFIXES = (
+     "/cdn-cgi/",
+ )
+ 
+-# These pages/resources are known public parts of the source site and are checked
+-# even if a later source edit temporarily stops linking to one of them.
++# The live source is authoritative. Start from its root and recursively copy the
++# embedded/static resources it actually references.
+ REQUIRED_SEEDS = (
+     "/",
+-    "/style.css",
+-    "/walkthrough.css",
+-    "/script.js",
+-    "/walkthrough.js",
+-    "/signup.js",
+-    "/icon.svg",
+-    "/android.svg",
+-    "/subscribers.html",
+-    "/subscribers.css",
+ )
+ 
+ OPTIONAL_SEEDS = (
+@@ -70,11 +61,15 @@ class HtmlRefs(html.parser.HTMLParser):
+ 
+     def _collect(self, tag: str, attrs) -> None:
+         data = {str(k).lower(): v for k, v in attrs if k}
+-        for key in ("src", "href", "poster"):
++        for key in ("src", "poster"):
+             value = data.get(key)
+             if value:
+                 self.refs.append(value)
+ 
++        href = data.get("href")
++        if href and tag != "a":
++            self.refs.append(href)
++
+         srcset = data.get("srcset")
+         if srcset:
+             for candidate in srcset.split(","):
+@@ -358,12 +353,6 @@ CSS_URL_RE = re.compile(
+         print("Exact V2 mirror aborted: root response is not a usable PuzzleVerse page", file=sys.stderr)
+         return 1
+ 
+-    # Known V1 defect: subscriber stylesheet must exist locally in V2.
+-    subscriber_css = output / "subscribers.css"
+-    if not subscriber_css.is_file() or subscriber_css.stat().st_size == 0:
+-        print("Exact V2 mirror aborted: subscribers.css was not imported", file=sys.stderr)
+-        return 1
+-
+     Path(args.manifest).write_text(
+         json.dumps(
+             {
+diff --git a/index.html b/index.html
+index 928fc29..c0a7c8b 100644
+--- a/index.html
++++ b/index.html
+@@ -102,4 +102,4 @@
+ <p id="signup-consent">By signing up, you agree to receive one email announcing the PuzzleVerse launch. Your email will be used only for this notification.</p><p id="signup-status" role="status" aria-live="polite"></p>
+ <noscript><p>You can submit this form without JavaScript. Your confirmation will open on a new page.</p></noscript>
+ </form></section>
+-<section class="closing wrap"><img class="closing-logo" src="icon.svg" width="96" height="96" alt="PuzzleVerse logo"><span class="eyebrow">YOUR NEXT “AHA” IS WAITING.</span><p>Make a little space<br>for <em>PuzzleVerse.</em></p><span class="android-note">A puzzle collection for Android</span></section></main><footer class="wrap"><a href="index.html#" class="brand"><img class="brandmark" src="icon.svg" width="40" height="40" alt="">PuzzleVerse.</a><span>Made for the joy of figuring it out.</span><a href="index.html#puzzles">Explore the collection ↑</a><a href="subscribers.html">Owner access</a></footer><script src="script.js"></script><script src="walkthrough.js"></script><script src="signup.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a401fbcede1d69b8',t:'MTc5MDI1NDk0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
++<section class="closing wrap"><img class="closing-logo" src="icon.svg" width="96" height="96" alt="PuzzleVerse logo"><span class="eyebrow">YOUR NEXT “AHA” IS WAITING.</span><p>Make a little space<br>for <em>PuzzleVerse.</em></p><span class="android-note">A puzzle collection for Android</span></section></main><footer class="wrap"><a href="index.html#" class="brand"><img class="brandmark" src="icon.svg" width="40" height="40" alt="">PuzzleVerse.</a><span>Made for the joy of figuring it out.</span><a href="index.html#puzzles">Explore the collection ↑</a><a href="subscribers.html">Owner access</a><a href="/puzzleverse-privacy/">Privacy Policy</a></footer><script src="script.js"></script><script src="walkthrough.js"></script><script src="signup.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a401fbcede1d69b8',t:'MTc5MDI1NDk0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

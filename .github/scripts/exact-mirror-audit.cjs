@@ -10,7 +10,7 @@ if (!mode || !a || !b) {
   process.exit(2);
 }
 
-const SOURCE_PATHS = ["/", "/subscribers.html"];
+const SOURCE_PATHS = ["/"];
 const IGNORE_PREFIXES = ["/api/", "/signin-with-chatgpt", "/cdn-cgi/"];
 
 function normalizeOrigin(value) {

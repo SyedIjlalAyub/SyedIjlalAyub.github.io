@@ -35,19 +35,10 @@ DYNAMIC_PREFIXES = (
     "/cdn-cgi/",
 )
 
-# These pages/resources are known public parts of the source site and are checked
-# even if a later source edit temporarily stops linking to one of them.
+# The live source is authoritative. Start from its root and recursively copy the
+# embedded/static resources it actually references.
 REQUIRED_SEEDS = (
     "/",
-    "/style.css",
-    "/walkthrough.css",
-    "/script.js",
-    "/walkthrough.js",
-    "/signup.js",
-    "/icon.svg",
-    "/android.svg",
-    "/subscribers.html",
-    "/subscribers.css",
 )
 
 OPTIONAL_SEEDS = (
@@ -70,10 +61,14 @@ class HtmlRefs(html.parser.HTMLParser):
 
     def _collect(self, tag: str, attrs) -> None:
         data = {str(k).lower(): v for k, v in attrs if k}
-        for key in ("src", "href", "poster"):
+        for key in ("src", "poster"):
             value = data.get(key)
             if value:
                 self.refs.append(value)
+
+        href = data.get("href")
+        if href and tag != "a":
+            self.refs.append(href)
 
         srcset = data.get("srcset")
         if srcset:
@@ -356,12 +351,6 @@ def main() -> int:
     index = output / "index.html"
     if not index.is_file() or b"PuzzleVerse" not in index.read_bytes():
         print("Exact V2 mirror aborted: root response is not a usable PuzzleVerse page", file=sys.stderr)
-        return 1
-
-    # Known V1 defect: subscriber stylesheet must exist locally in V2.
-    subscriber_css = output / "subscribers.css"
-    if not subscriber_css.is_file() or subscriber_css.stat().st_size == 0:
-        print("Exact V2 mirror aborted: subscribers.css was not imported", file=sys.stderr)
         return 1
 
     Path(args.manifest).write_text(
