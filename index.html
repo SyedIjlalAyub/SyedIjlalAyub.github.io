@@ -3,23 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f7f7f3" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)" />
-  <meta name="description" content="Android apps by Syed Ijlal Ayub — independent native Android products built with Kotlin and Jetpack Compose." />
+  <meta name="theme-color" content="#0b0d12" />
+  <meta name="description" content="Independent Android apps by Syed Ijlal Ayub, including PuzzleVerse — a native puzzle collection built with Kotlin and Jetpack Compose." />
   <meta name="author" content="Syed Ijlal Ayub" />
   <meta name="robots" content="index, follow" />
-  <meta name="color-scheme" content="light dark" />
   <link rel="canonical" href="https://syedijlalayub.github.io/" />
 
   <meta property="og:title" content="Apps by Syed Ijlal Ayub" />
-  <meta property="og:description" content="Independent native Android apps built with Kotlin and Jetpack Compose." />
+  <meta property="og:description" content="Independent Android apps built with Kotlin and Jetpack Compose." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://syedijlalayub.github.io/" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/57711072?v=4" />
   <meta property="og:image:alt" content="Syed Ijlal Ayub" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Apps by Syed Ijlal Ayub" />
-  <meta name="twitter:description" content="Independent native Android apps built with Kotlin and Jetpack Compose." />
+  <meta name="twitter:description" content="Independent Android apps built with Kotlin and Jetpack Compose." />
 
   <title>Apps by Syed Ijlal Ayub</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -58,93 +56,156 @@
   <header class="site-header" id="top">
     <div class="shell header-inner">
       <a class="brand" href="#top" aria-label="Apps by Syed Ijlal Ayub">
-        <span class="brand-name">Syed Ijlal Ayub</span>
-        <span class="brand-separator" aria-hidden="true">/</span>
-        <span class="brand-context">Apps</span>
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-copy">
+          <strong>Syed Ijlal Ayub</strong>
+          <small>Android apps</small>
+        </span>
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#apps">Apps</a>
         <a href="#about">About</a>
-        <a href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="nav-github" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero shell" aria-labelledby="hero-title">
-      <p class="eyebrow">Independent Android development</p>
-      <h1 id="hero-title">Android apps,<br><span>built with care.</span></h1>
-      <p class="hero-copy">I design and build native Android apps with Kotlin and Jetpack Compose. This site is a home for the products I release and the work behind them.</p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="#apps">View apps</a>
-        <a class="text-link" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Independent Android development</p>
+          <h1>Apps made with <span>care, clarity, and polish.</span></h1>
+          <p class="hero-lede">I design and build native Android apps with Kotlin and Jetpack Compose. This is where I showcase the products I am actually building and releasing.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#apps">Explore apps <span aria-hidden="true">↓</span></a>
+            <a class="hero-link" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-product" aria-label="PuzzleVerse preview">
+          <div class="orb orb-one" aria-hidden="true"></div>
+          <div class="orb orb-two" aria-hidden="true"></div>
+          <div class="phone" aria-hidden="true">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+              <div class="screen-topline">
+                <span>PuzzleVerse</span>
+                <span>•••</span>
+              </div>
+              <div class="screen-copy">
+                <small>DAILY PUZZLES</small>
+                <strong>Choose your challenge.</strong>
+              </div>
+              <div class="puzzle-grid">
+                <div class="puzzle-tile sudoku">
+                  <span class="tile-label">Sudoku</span>
+                  <div class="sudoku-mini">
+                    <i>7</i><i></i><i>3</i>
+                    <i></i><i>5</i><i></i>
+                    <i>2</i><i></i><i>9</i>
+                  </div>
+                </div>
+                <div class="puzzle-tile logigrid">
+                  <span class="tile-label">LogiGrid</span>
+                  <div class="pixel-mini">
+                    <i></i><i class="on"></i><i></i>
+                    <i class="on"></i><i class="on"></i><i></i>
+                    <i></i><i class="on"></i><i></i>
+                  </div>
+                </div>
+                <div class="puzzle-tile crypto">
+                  <span class="tile-label">Cryptograms</span>
+                  <div class="crypto-mini">A · ? · R</div>
+                </div>
+                <div class="puzzle-tile linkgrid">
+                  <span class="tile-label">LinkGrid</span>
+                  <div class="link-mini"><i></i><b></b><i></i><b></b><i></i></div>
+                </div>
+              </div>
+              <div class="screen-footer">
+                <span>4 puzzle systems</span>
+                <span>7 difficulty tiers</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-product-note">
+            <span class="status-dot" aria-hidden="true"></span>
+            PuzzleVerse · Closed testing
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Development focus">
+      <div class="shell trust-grid">
+        <span>Kotlin</span>
+        <span>Jetpack Compose</span>
+        <span>Native Android</span>
+        <span>Google Play</span>
       </div>
     </section>
 
     <section class="apps-section" id="apps" aria-labelledby="apps-title">
       <div class="shell">
-        <div class="section-intro">
-          <div>
-            <p class="eyebrow">Apps</p>
-            <h2 id="apps-title">Current work</h2>
+        <div class="section-heading">
+          <p class="eyebrow eyebrow-dark">Apps</p>
+          <div class="section-heading-row">
+            <h2 id="apps-title">Current releases</h2>
+            <p>Only real products appear here. No placeholders or concept projects.</p>
           </div>
-          <p>Each app gets a concise record of what it is, what it includes, and how it is built.</p>
         </div>
 
-        <article class="app-card" id="puzzleverse">
-          <div class="app-visual" aria-hidden="true">
-            <div class="app-icon">
-              <span class="app-icon-mark">PV</span>
+        <article class="product-card" id="puzzleverse">
+          <div class="product-visual">
+            <div class="product-icon" aria-hidden="true">
+              <div class="icon-grid">
+                <span class="dark">7</span><span class="yellow"></span><span></span><span>A</span>
+                <span></span><span class="dark">3</span><span class="blue"></span><span></span>
+                <span class="blue"></span><span></span><span class="dark goal">●</span><span>9</span>
+                <span>R</span><span class="yellow"></span><span></span><span class="dark"></span>
+              </div>
             </div>
-            <div class="app-visual-meta">
-              <span>Android</span>
-              <span>Closed testing</span>
+            <div class="product-visual-copy">
+              <strong>PuzzleVerse</strong>
+              <span>Logic puzzle collection</span>
             </div>
           </div>
 
-          <div class="app-content">
-            <div class="app-heading">
+          <div class="product-content">
+            <div class="product-heading">
               <div>
-                <p class="app-type">Puzzle &amp; logic</p>
+                <span class="product-kicker">01 · Android game</span>
                 <h3>PuzzleVerse</h3>
               </div>
-              <span class="status"><i aria-hidden="true"></i>Closed testing</span>
+              <span class="status-pill"><i aria-hidden="true"></i>Closed testing</span>
             </div>
 
-            <p class="app-summary">A native Android puzzle collection bringing four logic games into one cohesive app: Sudoku, LogiGrid, Cryptograms, and LinkGrid.</p>
+            <p class="product-summary">A native Android puzzle collection bringing Sudoku, LogiGrid, Cryptograms, and LinkGrid into one cohesive experience with shared progression, achievements, persistence, and cloud save.</p>
 
-            <div class="app-meta" aria-label="PuzzleVerse details">
-              <div>
-                <span>Built with</span>
-                <strong>Kotlin · Jetpack Compose · MVVM</strong>
-              </div>
-              <div>
-                <span>Platform</span>
-                <strong>Android</strong>
-              </div>
-              <div>
-                <span>Status</span>
-                <strong>Google Play closed testing</strong>
-              </div>
-            </div>
+            <dl class="product-meta">
+              <div><dt>Platform</dt><dd>Android</dd></div>
+              <div><dt>Built with</dt><dd>Kotlin · Jetpack Compose · MVVM</dd></div>
+              <div><dt>Status</dt><dd>Google Play closed testing</dd></div>
+            </dl>
 
-            <div class="app-details">
+            <div class="feature-list">
               <div>
-                <h4>Four puzzle systems</h4>
-                <p>Sudoku, LogiGrid, Cryptograms, and LinkGrid share one progression and navigation experience.</p>
+                <span>01</span>
+                <div><strong>Four distinct puzzle systems</strong><p>Sudoku, LogiGrid, Cryptograms, and LinkGrid, each with dedicated gameplay and difficulty progression.</p></div>
               </div>
               <div>
-                <h4>Progress that persists</h4>
-                <p>Local-first game state, journey history, achievements, streaks, and Google Play Games cloud save.</p>
+                <span>02</span>
+                <div><strong>Progress that survives the session</strong><p>Journey history, streaks, achievements, local-first persistence, and Google Play Games cloud save.</p></div>
               </div>
               <div>
-                <h4>Built for release</h4>
-                <p>Accessibility, responsive layouts, regression testing, failure handling, and production-ready monetization flows.</p>
+                <span>03</span>
+                <div><strong>Built for an actual release</strong><p>Accessibility, regression testing, responsive layouts, rewarded ads, failure handling, and release hardening.</p></div>
               </div>
             </div>
 
-            <div class="tech-row" aria-label="PuzzleVerse technologies">
+            <div class="tag-row" aria-label="PuzzleVerse technologies">
               <span>Kotlin</span>
               <span>Jetpack Compose</span>
               <span>Material 3</span>
@@ -153,21 +214,22 @@
           </div>
         </article>
 
-        <div class="more-apps">
-          <p>More apps will be added here as they are released.</p>
+        <div class="next-release">
+          <span>Next</span>
+          <p>More apps will appear here when there is something real to show.</p>
         </div>
       </div>
     </section>
 
     <section class="about-section" id="about" aria-labelledby="about-title">
       <div class="shell about-grid">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Focused products, built end to end.</h2>
+        <div class="about-heading">
+          <p class="eyebrow eyebrow-dark">About</p>
+          <h2 id="about-title">Built end to end, not just screen by screen.</h2>
         </div>
         <div class="about-copy">
-          <p>I build independent Android apps from product idea through implementation, testing, and release. I care about clear interaction, reliable state, accessibility, and the less-visible details that make an app hold together in everyday use.</p>
-          <p>The portfolio will grow with the apps themselves. No placeholders, no concept projects—only products I am actually building or shipping.</p>
+          <p>I build independent Android apps from product idea through implementation, testing, release, and iteration. The work includes the visible interface and the less-visible systems behind it: state, persistence, accessibility, cloud behavior, and production configuration.</p>
+          <p>This site is intentionally focused on the apps themselves.</p>
         </div>
       </div>
     </section>
@@ -179,8 +241,10 @@
         <strong>Syed Ijlal Ayub</strong>
         <span>Independent Android apps</span>
       </div>
-      <a href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <a href="#top">Back to top ↑</a>
+      <div class="footer-links">
+        <a href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 </body>
