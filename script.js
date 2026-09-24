@@ -29,7 +29,9 @@
   setTheme(savedTheme || (preferredLight ? 'light' : 'dark'), Boolean(savedTheme));
 
   themeToggle?.addEventListener('click', () => {
-    setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+    const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    savedTheme = nextTheme;
+    setTheme(nextTheme);
   });
 
   colorScheme.addEventListener?.('change', (event) => {
@@ -86,7 +88,11 @@
   }
 
   const navLinks = [...document.querySelectorAll('.nav-links a')];
-  const sections = navLinks
+  const sectionNavLinks = navLinks.filter((link) => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('#') && href.length > 1;
+  });
+  const sections = sectionNavLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
 
@@ -96,7 +102,7 @@
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
-      navLinks.forEach((link) => {
+      sectionNavLinks.forEach((link) => {
         const active = link.getAttribute('href') === `#${visible.target.id}`;
         link.classList.toggle('is-active', active);
         if (active) link.setAttribute('aria-current', 'true');
