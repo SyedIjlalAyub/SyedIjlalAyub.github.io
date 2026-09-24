@@ -1,251 +1,105 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0d12" />
-  <meta name="description" content="Independent Android apps by Syed Ijlal Ayub, including PuzzleVerse — a native puzzle collection built with Kotlin and Jetpack Compose." />
-  <meta name="author" content="Syed Ijlal Ayub" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://syedijlalayub.github.io/" />
-
-  <meta property="og:title" content="Apps by Syed Ijlal Ayub" />
-  <meta property="og:description" content="Independent Android apps built with Kotlin and Jetpack Compose." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://syedijlalayub.github.io/" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/57711072?v=4" />
-  <meta property="og:image:alt" content="Syed Ijlal Ayub" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Apps by Syed Ijlal Ayub" />
-  <meta name="twitter:description" content="Independent Android apps built with Kotlin and Jetpack Compose." />
-
-  <title>Apps by Syed Ijlal Ayub</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="showcase.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Apps by Syed Ijlal Ayub",
-    "url": "https://syedijlalayub.github.io/",
-    "description": "Independent Android apps by Syed Ijlal Ayub.",
-    "creator": {
-      "@type": "Person",
-      "name": "Syed Ijlal Ayub",
-      "url": "https://syedijlalayub.github.io/",
-      "sameAs": ["https://github.com/SyedIjlalAyub"]
-    },
-    "hasPart": [{
-      "@type": "SoftwareApplication",
-      "name": "PuzzleVerse",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "Android",
-      "description": "A native Android puzzle collection combining Sudoku, LogiGrid, Cryptograms, and LinkGrid.",
-      "author": {
-        "@type": "Person",
-        "name": "Syed Ijlal Ayub"
-      }
-    }]
-  }
-  </script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="shell header-inner">
-      <a class="brand" href="#top" aria-label="Apps by Syed Ijlal Ayub">
-        <span class="brand-mark" aria-hidden="true">S</span>
-        <span class="brand-copy">
-          <strong>Syed Ijlal Ayub</strong>
-          <small>Android apps</small>
-        </span>
-      </a>
-
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#apps">Apps</a>
-        <a href="#about">About</a>
-        <a class="nav-github" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-      </nav>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#17181C" media="(prefers-color-scheme: dark)"><meta name="color-scheme" content="light dark"><meta name="description" content="Meet PuzzleVerse: Sudoku, LogiGrid, Cryptograms and LinkGrid. Four ways to think, in a calm ink-and-paper puzzle collection for Android."><title>PuzzleVerse — A little room to think.</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="walkthrough.css"></head>
+<body><header class="nav wrap"><a href="index.html#" class="brand" aria-label="PuzzleVerse home"><img class="brandmark" src="icon.svg" width="48" height="48" alt="">PuzzleVerse<span class="brand-period">.</span></a><nav aria-label="Main navigation"><a href="index.html#puzzles">The puzzles</a><a href="index.html#approach">The experience</a><a class="signup-nav" href="index.html#launch-notification">Get notified</a><span class="platform" style="align-items:center;gap:10px">Coming Soon <img src="android.svg" alt="Android" width="24" height="24" style="display:block;flex-shrink:0"></span></nav></header>
+<main><section class="hero wrap"><div class="hero-copy"><p class="eyebrow">FOUR PUZZLES. ENDLESS CURIOSITY.</p><h1>A little room<br>to <em>think.</em></h1><p class="intro">Leave the noise behind. Find your next small discovery in a collection of puzzles made for curious minds.</p><a class="button" href="index.html#puzzles">Find your kind of puzzle <span aria-hidden="true">↗</span></a><div class="hero-note"><span class="short-line"></span> Ink, paper, and a moment for yourself.</div></div><div class="hero-art" aria-label="Illustrative Sudoku board"><div class="board-top"><span>THE JOY OF FIGURING IT OUT</span><span>01 / 04</span></div><div id="hero-board" class="sudoku"></div><div class="board-bottom"><span><i class="tiny-square"></i> Sudoku</span><span>One square at a time.</span></div><span class="margin-note">Every little breakthrough counts.</span></div></section>
+<div class="ribbon"><div class="wrap ribbon-inner"><span>NUMBERS <b>+</b></span><span>PATTERNS <b>+</b></span><span>WORDS <b>+</b></span><span>POSSIBILITIES</span></div></div>
+<section id="puzzles" class="puzzles wrap"><div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Different puzzles.<br>The same <em>“aha.”</em></h2></div><p>A familiar favourite or a new way to think.<br>Follow your curiosity.</p></div><div class="puzzle-grid">
+<article class="puzzle-card puzzle-sudoku"><div class="card-top"><span>01 / NUMBER LOGIC</span><span aria-hidden="true"><svg class="puzzle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M9.5 3.5v17M14.5 3.5v17M3.5 9.5h17M3.5 14.5h17"/></svg></span></div><div class="mini-visual"><div id="mini-sudoku" class="mini-sudoku"></div></div><h3>Sudoku<span>01</span></h3><p>Nine numbers. One satisfying solution. Find the rhythm in rows, columns, and squares.</p><div class="tags"><span>Deduction</span><span>Numbers</span></div></article>
+<article class="puzzle-card puzzle-logigrid"><div class="card-top"><span>02 / PICTURE LOGIC</span><span aria-hidden="true"><svg class="puzzle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><rect x="6.3" y="6.3" width="3.4" height="3.4" fill="currentColor" stroke="none"/><rect x="14.3" y="6.3" width="3.4" height="3.4" fill="currentColor" stroke="none"/><rect x="10.3" y="10.3" width="3.4" height="3.4" fill="currentColor" stroke="none"/><rect x="6.3" y="14.3" width="3.4" height="3.4" fill="currentColor" stroke="none"/><rect x="14.3" y="14.3" width="3.4" height="3.4" fill="currentColor" stroke="none"/></svg></span></div><div class="mini-visual"><div id="nonogram" class="nonogram"></div></div><h3>LogiGrid<span>02</span></h3><p>Read the clues. Fill the squares. Watch a hidden pattern emerge, one decision at a time.</p><div class="tags"><span>Patterns</span><span>Nonograms</span></div></article>
+<article class="puzzle-card puzzle-cryptograms"><div class="card-top"><span>03 / WORD LOGIC</span><span aria-hidden="true"><svg class="puzzle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="4"/><path d="M11 11l9 9M15.5 15.5l3-3M17.5 17.5l3-3"/></svg></span></div><div class="mini-visual crypto-visual"><div class="cipher">X M K Q N</div><div class="decoded"><span>T</span><span>H</span><span>I</span><span>N</span><span>K</span></div><div class="cipher-caption">A LITTLE CLUE GOES A LONG WAY.</div></div><h3>Cryptograms<span>03</span></h3><p>A thought in disguise. Connect letters and uncover the words hiding beneath the code.</p><div class="tags"><span>Language</span><span>Discovery</span></div></article>
+<article class="puzzle-card puzzle-linkgrid"><div class="card-top"><span>04 / SPATIAL LOGIC</span><span aria-hidden="true"><svg class="puzzle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12L5 5M12 12L19 5M12 12L5 19M12 12L19 19"/><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/><circle cx="5" cy="5" r="1.7" fill="currentColor" stroke="none"/><circle cx="19" cy="5" r="1.7" fill="currentColor" stroke="none"/><circle cx="5" cy="19" r="1.7" fill="currentColor" stroke="none"/><circle cx="19" cy="19" r="1.7" fill="currentColor" stroke="none"/></svg></span></div><div class="mini-visual"><div id="linkgrid" class="linkgrid"></div></div><h3>LinkGrid<span>04</span></h3><p>Send numbered paths across the board. Think ahead, connect your moves, and reach the goal.</p><div class="tags"><span>Planning</span><span>Connections</span></div></article>
+</div>
+<section class="walkthrough" id="how-to-play" aria-labelledby="walkthrough-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">A CLOSER LOOK</p><h2 id="walkthrough-title">Simple rules.<br>Wonderful <em>possibilities.</em></h2></div>
+    <p>Get to know each puzzle,<br>one small discovery at a time.</p>
+  </div>
+  <div class="puzzle-tabs" role="tablist" aria-label="Puzzle rules" hidden>
+    <button type="button" role="tab" id="tab-sudoku" aria-controls="guide-sudoku" aria-selected="true" tabindex="0">Sudoku</button>
+    <button type="button" role="tab" id="tab-logigrid" aria-controls="guide-logigrid" aria-selected="false" tabindex="-1">LogiGrid</button>
+    <button type="button" role="tab" id="tab-cryptograms" aria-controls="guide-cryptograms" aria-selected="false" tabindex="-1">Cryptograms</button>
+    <button type="button" role="tab" id="tab-linkgrid" aria-controls="guide-linkgrid" aria-selected="false" tabindex="-1">LinkGrid</button>
+  </div>
+  <div class="puzzle-guide" id="guide-sudoku" aria-labelledby="guide-sudoku-title">
+    <figure class="rule-example">
+      <p class="example-label">RULE EXAMPLE · ONE 3 × 3 BOX</p>
+      <div class="example-box" role="img" aria-label="A 3 by 3 box containing 1, 2, 3, 4, 5, 6, 7, 8, 9. The missing 5 is highlighted."><span>1</span><span>2</span><span>3</span><span>4</span><span class="example-answer">5</span><span>6</span><span>7</span><span>8</span><span>9</span></div>
+      <figcaption>Eight numbers in place. One number left.<br>This box is missing <strong>5</strong>.</figcaption>
+    </figure>
+    <div class="guide-copy">
+      <p class="eyebrow">01 / NUMBER LOGIC</p><h3 id="guide-sudoku-title">Everything in its place.</h3>
+      <p>Fill the board with 1–9. Every row, every column, and every 3 × 3 box must contain each number exactly once.</p>
+      <ol class="guide-steps"><li>Choose an empty cell and check its row, column, and box.</li><li>Use the number pad to enter a value, or Notes to keep track of possibilities.</li><li>Keep narrowing the choices until the whole board is complete.</li></ol>
+      <p class="guide-tip"><strong>A place to start</strong> Look for a row, column, or box with just one number missing.</p>
     </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="shell hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Independent Android development</p>
-          <h1>Apps made with <span>care, clarity, and polish.</span></h1>
-          <p class="hero-lede">I design and build native Android apps with Kotlin and Jetpack Compose. This is where I showcase the products I am actually building and releasing.</p>
-          <div class="hero-actions">
-            <a class="button button-light" href="#apps">Explore apps <span aria-hidden="true">↓</span></a>
-            <a class="hero-link" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-
-        <div class="hero-product" aria-label="PuzzleVerse preview">
-          <div class="orb orb-one" aria-hidden="true"></div>
-          <div class="orb orb-two" aria-hidden="true"></div>
-          <div class="phone" aria-hidden="true">
-            <div class="phone-speaker"></div>
-            <div class="phone-screen">
-              <div class="screen-topline">
-                <span>PuzzleVerse</span>
-                <span>•••</span>
-              </div>
-              <div class="screen-copy">
-                <small>DAILY PUZZLES</small>
-                <strong>Choose your challenge.</strong>
-              </div>
-              <div class="puzzle-grid">
-                <div class="puzzle-tile sudoku">
-                  <span class="tile-label">Sudoku</span>
-                  <div class="sudoku-mini">
-                    <i>7</i><i></i><i>3</i>
-                    <i></i><i>5</i><i></i>
-                    <i>2</i><i></i><i>9</i>
-                  </div>
-                </div>
-                <div class="puzzle-tile logigrid">
-                  <span class="tile-label">LogiGrid</span>
-                  <div class="pixel-mini">
-                    <i></i><i class="on"></i><i></i>
-                    <i class="on"></i><i class="on"></i><i></i>
-                    <i></i><i class="on"></i><i></i>
-                  </div>
-                </div>
-                <div class="puzzle-tile crypto">
-                  <span class="tile-label">Cryptograms</span>
-                  <div class="crypto-mini">A · ? · R</div>
-                </div>
-                <div class="puzzle-tile linkgrid">
-                  <span class="tile-label">LinkGrid</span>
-                  <div class="link-mini"><i></i><b></b><i></i><b></b><i></i></div>
-                </div>
-              </div>
-              <div class="screen-footer">
-                <span>4 puzzle systems</span>
-                <span>7 difficulty tiers</span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-product-note">
-            <span class="status-dot" aria-hidden="true"></span>
-            PuzzleVerse · Closed testing
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="Development focus">
-      <div class="shell trust-grid">
-        <span>Kotlin</span>
-        <span>Jetpack Compose</span>
-        <span>Native Android</span>
-        <span>Google Play</span>
-      </div>
-    </section>
-
-    <section class="apps-section" id="apps" aria-labelledby="apps-title">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow eyebrow-dark">Apps</p>
-          <div class="section-heading-row">
-            <h2 id="apps-title">Current releases</h2>
-            <p>Only real products appear here. No placeholders or concept projects.</p>
-          </div>
-        </div>
-
-        <article class="product-card" id="puzzleverse">
-          <div class="product-visual">
-            <div class="product-icon" aria-hidden="true">
-              <div class="icon-grid">
-                <span class="dark">7</span><span class="yellow"></span><span></span><span>A</span>
-                <span></span><span class="dark">3</span><span class="blue"></span><span></span>
-                <span class="blue"></span><span></span><span class="dark goal">●</span><span>9</span>
-                <span>R</span><span class="yellow"></span><span></span><span class="dark"></span>
-              </div>
-            </div>
-            <div class="product-visual-copy">
-              <strong>PuzzleVerse</strong>
-              <span>Logic puzzle collection</span>
-            </div>
-          </div>
-
-          <div class="product-content">
-            <div class="product-heading">
-              <div>
-                <span class="product-kicker">01 · Android game</span>
-                <h3>PuzzleVerse</h3>
-              </div>
-              <span class="status-pill"><i aria-hidden="true"></i>Closed testing</span>
-            </div>
-
-            <p class="product-summary">A native Android puzzle collection bringing Sudoku, LogiGrid, Cryptograms, and LinkGrid into one cohesive experience with shared progression, achievements, persistence, and cloud save.</p>
-
-            <dl class="product-meta">
-              <div><dt>Platform</dt><dd>Android</dd></div>
-              <div><dt>Built with</dt><dd>Kotlin · Jetpack Compose · MVVM</dd></div>
-              <div><dt>Status</dt><dd>Google Play closed testing</dd></div>
-            </dl>
-
-            <div class="feature-list">
-              <div>
-                <span>01</span>
-                <div><strong>Four distinct puzzle systems</strong><p>Sudoku, LogiGrid, Cryptograms, and LinkGrid, each with dedicated gameplay and difficulty progression.</p></div>
-              </div>
-              <div>
-                <span>02</span>
-                <div><strong>Progress that survives the session</strong><p>Journey history, streaks, achievements, local-first persistence, and Google Play Games cloud save.</p></div>
-              </div>
-              <div>
-                <span>03</span>
-                <div><strong>Built for an actual release</strong><p>Accessibility, regression testing, responsive layouts, rewarded ads, failure handling, and release hardening.</p></div>
-              </div>
-            </div>
-
-            <div class="tag-row" aria-label="PuzzleVerse technologies">
-              <span>Kotlin</span>
-              <span>Jetpack Compose</span>
-              <span>Material 3</span>
-              <span>Google Play Games</span>
-            </div>
-          </div>
-        </article>
-
-        <div class="next-release">
-          <span>Next</span>
-          <p>More apps will appear here when there is something real to show.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section" id="about" aria-labelledby="about-title">
-      <div class="shell about-grid">
-        <div class="about-heading">
-          <p class="eyebrow eyebrow-dark">About</p>
-          <h2 id="about-title">Built end to end, not just screen by screen.</h2>
-        </div>
-        <div class="about-copy">
-          <p>I build independent Android apps from product idea through implementation, testing, release, and iteration. The work includes the visible interface and the less-visible systems behind it: state, persistence, accessibility, cloud behavior, and production configuration.</p>
-          <p>This site is intentionally focused on the apps themselves.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <div>
-        <strong>Syed Ijlal Ayub</strong>
-        <span>Independent Android apps</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <a href="#top">Back to top ↑</a>
-      </div>
+  </div>
+  <div class="puzzle-guide" id="guide-logigrid" aria-labelledby="guide-logigrid-title">
+    <figure class="rule-example">
+      <p class="example-label">RULE EXAMPLE · A FIVE-CELL ROW</p>
+      <div class="example-clues" aria-label="Clues: 3 then 1">3 <span>1</span></div>
+      <div class="example-line" role="img" aria-label="Three filled cells, one empty cell marked with a cross, then one filled cell."><span class="example-filled"></span><span class="example-filled"></span><span class="example-filled"></span><span>×</span><span class="example-filled"></span></div>
+      <figcaption><strong>3 filled</strong> + <strong>1 gap</strong> + <strong>1 filled</strong>.<br>In five cells, there is only one arrangement.</figcaption>
+    </figure>
+    <div class="guide-copy">
+      <p class="eyebrow">02 / PICTURE LOGIC</p><h3 id="guide-logigrid-title">Let the clues take shape.</h3>
+      <p>LogiGrid is a nonogram. The numbers beside each row and column describe groups of consecutive filled cells, in order.</p>
+      <ol class="guide-steps"><li>Read the clues from left to right, or top to bottom.</li><li>Leave at least one empty cell between separate groups.</li><li>Use rows and columns together to decide which cells to fill and which to mark empty.</li></ol>
+      <p class="guide-tip"><strong>A place to start</strong> Look for a line whose groups and required gaps fill its entire length.</p>
     </div>
-  </footer>
-</body>
-</html>
+  </div>
+  <div class="puzzle-guide" id="guide-cryptograms" aria-labelledby="guide-cryptograms-title">
+    <figure class="rule-example">
+      <p class="example-label">RULE EXAMPLE · REPEATED LETTERS</p>
+      <div class="example-cipher" role="img" aria-label="Cipher X Y X becomes E V E when X maps to E and Y maps to V."><span class="cipher-row-label">CIPHER</span><span>X</span><span>Y</span><span>X</span><span class="cipher-row-label">DECODED</span><span class="example-answer">E</span><span>V</span><span class="example-answer">E</span></div>
+      <figcaption>If <strong>X = E</strong> and <strong>Y = V</strong>, XYX becomes EVE.<br>The same cipher letter always shares one answer.</figcaption>
+    </figure>
+    <div class="guide-copy">
+      <p class="eyebrow">03 / WORD LOGIC</p><h3 id="guide-cryptograms-title">A thought, waiting to be found.</h3>
+      <p>A quote is hidden behind a letter substitution. Work out which real letter each cipher letter represents to uncover the words.</p>
+      <ol class="guide-steps"><li>Look for short words and repeated letter patterns.</li><li>Select a cipher letter and enter your guess. Its matching letters share that guess.</li><li>Use the emerging words to refine your guesses and reveal the full quote.</li></ol>
+      <p class="guide-tip"><strong>A place to start</strong> A one-letter word in English is usually “A” or “I.” Check how that guess fits elsewhere.</p>
+    </div>
+  </div>
+  <div class="puzzle-guide" id="guide-linkgrid" aria-labelledby="guide-linkgrid-title">
+    <figure class="rule-example">
+      <p class="example-label">RULE EXAMPLE · THE SKIP RULE</p>
+      <p class="example-direction">Send the <strong>2</strong> to the right <span aria-hidden="true">→</span></p>
+      <div class="example-line link-example" role="img" aria-label="Before: tile 2, an empty cell, an already-filled cell, the empty target, and an empty cell."><span class="example-filled">2</span><span></span><span class="example-existing"></span><span class="example-target">◇</span><span></span></div>
+      <p class="example-direction">Two new cells filled</p>
+      <div class="example-line link-example" role="img" aria-label="After: tile 2 is activated; the next empty cell is filled, the already-filled cell is skipped, and the target is filled. The final cell remains empty."><span class="example-filled">2</span><span class="example-existing"></span><span class="example-existing"></span><span class="example-target example-existing"></span><span></span></div>
+      <figcaption>The middle cell was already filled, so it is skipped.<br>The second new cell reaches the <strong>target ◇</strong>.</figcaption>
+    </figure>
+    <div class="guide-copy">
+      <p class="eyebrow">04 / SPATIAL LOGIC</p><h3 id="guide-linkgrid-title">The next move changes everything.</h3>
+      <p>Reach the target by activating numbered tiles. Each tile fills itself and the next N unfilled cells in the direction you choose.</p>
+      <ol class="guide-steps"><li>Select a numbered tile, then choose a direction.</li><li>Already-filled cells are skipped and do not use up the tile’s count.</li><li>Choose the order of your moves so a path can reach the target.</li></ol>
+      <p class="guide-tip"><strong>A place to start</strong> Work backwards from the target. Which cells need to be filled first so your final tile can reach it?</p>
+    </div>
+  </div>
+</section>
+<section class="more-puzzles" aria-labelledby="more-puzzles-title">
+  <div>
+    <p class="eyebrow">THE COLLECTION IS GROWING</p>
+    <h3 id="more-puzzles-title">More puzzles <em>coming soon.</em></h3>
+  </div>
+  <p class="more-puzzles-copy">New puzzles are on the way, with more ways to challenge your mind and find your next “aha.”</p>
+</section>
+</section>
+<section id="approach" class="approach"><div class="wrap approach-inner"><div><p class="eyebrow">A CALMER KIND OF CHALLENGE</p><h2>Less distraction.<br>More <em>discovery.</em></h2><p class="approach-copy">The simplicity of a puzzle on paper, with the little comforts that help you keep going.</p></div><div class="feature-list"><article><span class="feature-symbol" aria-hidden="true">↗</span><div><h3>Find your own level</h3><p>Seven difficulties, from Easy to Mythic. A gentle warm-up or something to really get lost in.</p></div></article><article><span class="feature-symbol" aria-hidden="true">↶</span><div><h3>A little help, when you need it</h3><p>Undo a move, take a hint, or pause for a moment. There is room to work things out.</p></div></article><article><span class="feature-symbol" aria-hidden="true">◷</span><div><h3>Come back to your curiosity</h3><p>Pick up saved puzzles, build your streak, and celebrate the progress you make along the way.</p></div></article></div></div></section>
+<section class="daily-section wrap" id="daily-puzzle" aria-labelledby="daily-title">
+  <div class="daily-copy"><p class="eyebrow">THE DAILY PUZZLE</p><h2 id="daily-title">Your daily moment.<br>A fresh reason to <em>think.</em></h2><p>A new day brings a new challenge. Open PuzzleVerse and let the Daily Puzzle choose your starting point.</p><p>A quiet coffee break, a little time between tasks, or a thoughtful end to the day. Make a little room for one more discovery.</p></div>
+  <ol class="daily-details">
+    <li><span class="daily-number" aria-hidden="true">01</span><div><h3>A changing mix</h3><p>The featured puzzle type and difficulty change with the day, giving you a reason to explore the collection.</p></div></li>
+    <li><span class="daily-number" aria-hidden="true">02</span><div><h3>One place to begin</h3><p>Find the Daily Puzzle on the app’s Home screen and step straight into the day’s challenge.</p></div></li>
+    <li><span class="daily-number" aria-hidden="true">03</span><div><h3>A small achievement</h3><p>Complete your first daily puzzle to earn Daily Devotee. Come back tomorrow for a fresh challenge.</p></div></li>
+  </ol>
+</section>
+<section class="launch-signup wrap" id="launch-notification" aria-labelledby="launch-title">
+<div><p class="eyebrow">BE THERE FOR THE FIRST PUZZLE</p><h2 id="launch-title">A little note.<br>When we’re <em>ready.</em></h2><p class="signup-copy">PuzzleVerse is coming to Android. Leave your email and receive a notification when the app is live.</p></div>
+<form id="launch-form" action="https://puzzleverse.syed40175.chatgpt.site/api/subscribe" method="post">
+<label for="launch-email">Your email address</label><div class="signup-fields"><input id="launch-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required aria-describedby="signup-consent"><button class="button" type="submit">Notify me at launch</button></div>
+<div class="signup-trap" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<p id="signup-consent">By signing up, you agree to receive one email announcing the PuzzleVerse launch. Your email will be used only for this notification.</p><p id="signup-status" role="status" aria-live="polite"></p>
+<noscript><p>You can submit this form without JavaScript. Your confirmation will open on a new page.</p></noscript>
+</form></section>
+<section class="closing wrap"><img class="closing-logo" src="icon.svg" width="96" height="96" alt="PuzzleVerse logo"><span class="eyebrow">YOUR NEXT “AHA” IS WAITING.</span><p>Make a little space<br>for <em>PuzzleVerse.</em></p><span class="android-note">A puzzle collection for Android</span></section></main><footer class="wrap"><a href="index.html#" class="brand"><img class="brandmark" src="icon.svg" width="40" height="40" alt="">PuzzleVerse.</a><span>Made for the joy of figuring it out.</span><a href="index.html#puzzles">Explore the collection ↑</a><a href="subscribers.html">Owner access</a></footer><script src="script.js"></script><script src="walkthrough.js"></script><script src="signup.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a401fbcede1d69b8',t:'MTc5MDI1NDk0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

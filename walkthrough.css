@@ -1,0 +1,50 @@
+.walkthrough{padding-top:5rem}
+.walkthrough .section-heading{gap:2rem}
+.walkthrough .eyebrow,.daily-section .eyebrow{font-size:.75rem;letter-spacing:.12em}
+.puzzle-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.puzzle-tabs[hidden],.puzzle-guide[hidden]{display:none!important}
+.puzzle-tabs button{font:500 1rem/1.4 'Manrope',sans-serif;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:2rem;padding:.7rem 1.35rem;min-height:48px;cursor:pointer}
+.puzzle-tabs button[aria-selected=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.puzzle-tabs button:hover:not([aria-selected=true]){background:var(--page)}
+.puzzle-tabs button:focus-visible,.puzzle-guide:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.puzzle-guide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center;padding-block:1rem 2rem}
+.rule-example{background:var(--surface);border:1px solid var(--line);margin:0;padding:2rem;min-height:27rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;min-width:0;text-align:center}
+.example-label{font-size:.75rem;letter-spacing:.12em;color:var(--muted);margin:0}
+.example-box{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(100%,15rem);aspect-ratio:1;border:1px solid var(--ink);background:var(--paper)}
+.example-box span{display:grid;place-items:center;border:1px solid var(--line);font:2rem 'Fraunces',Georgia,serif}
+.example-answer,.example-filled{background:var(--ink);color:var(--paper)}
+.rule-example figcaption{font-size:.875rem;line-height:1.75;color:var(--muted);max-width:28rem}
+.rule-example strong{color:var(--ink);font-weight:600}
+.example-clues{font:2.5rem 'Fraunces',Georgia,serif;display:flex;gap:1.5rem;align-items:center}
+.example-line{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;width:min(100%,23rem)}
+.example-line>span{aspect-ratio:1;border:1px solid var(--line);display:grid;place-items:center;font-size:clamp(1rem,2.5vw,1.5rem);min-width:0}
+.example-cipher{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:1rem .5rem;align-items:center;width:min(100%,24rem)}
+.example-cipher>span:not(.cipher-row-label){min-height:3.5rem;display:grid;place-items:center;border-bottom:1px solid var(--ink);font:clamp(1.5rem,3vw,2rem) 'Fraunces',Georgia,serif}
+.cipher-row-label{font-size:.75rem;letter-spacing:.08em;text-align:left;padding-right:.5rem;color:var(--muted)}
+.example-direction{font-size:.875rem;margin:0;color:var(--muted)}
+.example-direction span{margin-left:.5rem;font-size:1.25rem}
+.example-existing{background:var(--page)}
+.example-line .example-target{border:3px double var(--ink)}
+.example-line .example-target.example-filled{border-color:var(--paper);outline:1px solid var(--ink)}
+.guide-copy{min-width:0}
+.guide-copy .eyebrow{margin:0 0 1rem}
+.guide-copy h3{font-size:clamp(1.75rem,3vw,2.25rem);line-height:1.25;letter-spacing:-.025em;margin:0 0 1.25rem;text-wrap:balance}
+.guide-copy>p:not(.eyebrow){font-size:1rem;line-height:1.8;color:var(--muted)}
+.guide-steps{font-size:1rem;line-height:1.8;margin:1.25rem 0 1.5rem;padding-left:1.5rem}
+.guide-steps li{padding-left:.4rem;margin-bottom:.65rem}
+.guide-steps li::marker{font-family:'Fraunces',Georgia,serif;color:var(--muted)}
+.guide-copy .guide-tip{border-top:1px solid var(--line);padding-top:1.15rem;margin:0;font-size:.875rem!important}
+.guide-tip strong{display:block;color:var(--ink);font-weight:600;margin-bottom:.35rem}
+.daily-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);padding-block:5.5rem;align-items:center;border-bottom:1px solid var(--line)}
+.daily-copy h2{text-wrap:balance;font-size:clamp(2rem,4vw,3rem)}
+.daily-copy>p:not(.eyebrow){font-size:1rem;line-height:1.8;color:var(--muted);max-width:30rem;margin:1.5rem 0 0}
+.daily-details{list-style:none;padding:0;margin:0}
+.daily-details li{display:flex;align-items:flex-start;gap:1.5rem;border-top:1px solid var(--line);padding:1.5rem 0}
+.daily-details li:last-child{padding-bottom:0}
+.daily-number{font:1.75rem/1.3 'Fraunces',Georgia,serif;color:var(--muted);min-width:2rem}
+.daily-details h3{font:500 1.0625rem/1.5 'Manrope',sans-serif;margin:0 0 .5rem}
+.daily-details p{font-size:1rem;line-height:1.8;color:var(--muted);margin:0}
+@media(max-width:800px){.puzzle-guide,.daily-section{grid-template-columns:minmax(0,1fr)}.guide-copy{order:-1}.rule-example{min-height:23rem}.daily-section{gap:2.5rem}}
+@media(max-width:650px){.walkthrough{padding-top:3.5rem}.puzzle-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.puzzle-tabs button{padding:.7rem .5rem;overflow-wrap:anywhere;font-size:.875rem}.rule-example{padding:1.5rem 1rem;min-height:22rem}.daily-section{padding-block:3.5rem}.daily-details li{gap:1rem}.walkthrough .section-heading>p{font-size:1rem}.example-cipher{column-gap:.3rem}.cipher-row-label{letter-spacing:0}}
+/* App-aligned frames, controls and puzzle identity. */
+.rule-example{border-radius:var(--radius-board)}.puzzle-tabs button{border-radius:var(--radius-card)}.puzzle-tabs button[aria-selected=true]{box-shadow:inset 0 -3px 0 var(--tab-accent)}#tab-sudoku{--tab-accent:var(--sudoku)}#tab-logigrid{--tab-accent:var(--logigrid)}#tab-cryptograms{--tab-accent:var(--cryptograms)}#tab-linkgrid{--tab-accent:var(--linkgrid)}.example-line .example-filled{background:var(--board-fill);color:var(--ink)}.link-example .example-filled{background:var(--paper);border:1.5px solid var(--ink);border-radius:6px}.link-example .example-existing{background:var(--page);border:1px solid var(--faint);border-radius:4px}.example-line .example-target{border:2px solid var(--target);color:var(--target-inner);border-radius:4px}.example-line .example-target.example-existing{background:#1A6B5E;color:#FAFAF8}.walkthrough .eyebrow,.daily-section .eyebrow{letter-spacing:.03em}.guide-steps li::marker{color:var(--ink)}.daily-number{color:var(--ink)}.rule-example strong{color:var(--ink)}
