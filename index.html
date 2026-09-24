@@ -6,6 +6,9 @@
   <meta name="theme-color" content="#0a0c0f" />
   <meta name="description" content="Syed Ijlal Ayub — SAP Integration Consultant and Software Engineer focused on enterprise integration, Android engineering, and practical software." />
   <meta name="author" content="Syed Ijlal Ayub" />
+  <meta name="robots" content="index, follow" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="canonical" href="https://syedijlalayub.github.io/" />
   <meta property="og:title" content="Syed Ijlal Ayub — SAP Integration Consultant & Software Engineer" />
   <meta property="og:description" content="Enterprise integration with a product engineer's mindset." />
   <meta property="og:type" content="website" />
@@ -14,6 +17,26 @@
   <meta name="twitter:card" content="summary" />
   <title>Syed Ijlal Ayub — Integration & Software Engineering</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Syed Ijlal Ayub",
+    "url": "https://syedijlalayub.github.io/",
+    "jobTitle": "SAP Integration Consultant",
+    "sameAs": ["https://github.com/SyedIjlalAyub"],
+    "knowsAbout": [
+      "SAP Integration",
+      "Software Engineering",
+      "API Design",
+      "Kotlin",
+      "Jetpack Compose",
+      "Android Development",
+      "Python",
+      "Machine Learning"
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
@@ -66,12 +89,12 @@
         <div class="hero-proof" aria-label="Current engineering focus">
           <div><strong>Enterprise</strong><span>SAP integration & APIs</span></div>
           <div><strong>Product</strong><span>Android · Kotlin · Compose</span></div>
-          <div><strong>Next</strong><span>Applied machine learning</span></div>
+          <div><strong>Learning</strong><span>Applied machine learning</span></div>
         </div>
       </div>
 
       <div class="hero-visual reveal" aria-label="Engineering profile visualization">
-        <div class="system-card">
+        <div class="system-card spotlight">
           <div class="system-card-head">
             <span class="system-dot"></span>
             <span>engineering.profile</span>
@@ -124,7 +147,7 @@
       </div>
 
       <div class="work-stack">
-        <article class="case-card case-featured reveal">
+        <article class="case-card case-featured spotlight reveal">
           <div class="case-rail">
             <span>01</span>
             <span>Android Product</span>
@@ -132,21 +155,27 @@
           <div class="case-content">
             <div class="case-header">
               <div>
-                <p class="case-kicker">Independent product · Pre-release</p>
+                <p class="case-kicker">Independent Android product</p>
                 <h3>PuzzleVerse</h3>
               </div>
-              <a class="case-link" href="https://github.com/SyedIjlalAyub" target="_blank" rel="noreferrer" aria-label="Open Syed Ijlal Ayub on GitHub">GitHub ↗</a>
+              <span class="case-status"><i></i>Private project</span>
             </div>
-            <p class="case-summary">A native Android puzzle collection designed as a cohesive product rather than four isolated games. The engineering spans generators, game state, persistence, accessibility, cloud-aware behavior, release hardening, and monetization boundaries.</p>
+            <p class="case-summary">A native puzzle collection engineered as one product rather than a bundle of isolated games. It combines puzzle generation, deterministic game state, progression, cloud-aware persistence, accessibility, testing, and release-quality UX.</p>
+
+            <div class="case-metrics" aria-label="PuzzleVerse product scope">
+              <div><strong>4</strong><span>Puzzle systems</span></div>
+              <div><strong>7</strong><span>Difficulty tiers</span></div>
+              <div><strong>Native</strong><span>Kotlin + Compose</span></div>
+            </div>
 
             <div class="case-grid">
               <div class="case-facts">
                 <div><span>Game systems</span><strong>Sudoku · LogiGrid · Cryptograms · LinkGrid</strong></div>
                 <div><span>Architecture</span><strong>Kotlin · Jetpack Compose · MVVM</strong></div>
-                <div><span>Product concerns</span><strong>Progression · Accessibility · Persistence · Testing</strong></div>
+                <div><span>Release focus</span><strong>Accessibility · Persistence · Cloud save · Regression testing</strong></div>
               </div>
               <div class="puzzle-board" aria-hidden="true">
-                <div class="board-label">PUZZLEVERSE / 4 SYSTEMS</div>
+                <div class="board-label">PUZZLEVERSE / LOGIC SYSTEMS</div>
                 <div class="board-grid">
                   <span class="cell n">7</span><span class="cell fill"></span><span class="cell"></span><span class="cell code">A</span>
                   <span class="cell"></span><span class="cell n">3</span><span class="cell fill"></span><span class="cell"></span>
@@ -158,7 +187,7 @@
           </div>
         </article>
 
-        <article class="case-card reveal">
+        <article class="case-card spotlight reveal">
           <div class="case-rail">
             <span>02</span>
             <span>Enterprise</span>
@@ -171,28 +200,18 @@
               </div>
             </div>
             <p class="case-summary">Designing, implementing, and supporting integration flows between enterprise systems. I focus on contracts, transformation logic, observability, failure handling, and maintainability — without exposing confidential client implementation details.</p>
+            <div class="case-mini-grid">
+              <div><span>Design</span><strong>Interfaces & contracts</strong></div>
+              <div><span>Build</span><strong>Mapping & validation</strong></div>
+              <div><span>Operate</span><strong>Tracing & diagnostics</strong></div>
+            </div>
             <div class="flow-strip" aria-hidden="true">
               <span>SOURCE</span><i>→</i><span>VALIDATE</span><i>→</i><span>TRANSFORM</span><i>→</i><span>DELIVER</span><i>→</i><span>TRACE</span>
             </div>
           </div>
         </article>
 
-        <article class="case-card reveal">
-          <div class="case-rail">
-            <span>03</span>
-            <span>Learning Track</span>
-          </div>
-          <div class="case-content compact-case">
-            <div class="case-header">
-              <div>
-                <p class="case-kicker">Software Engineering · Machine Learning</p>
-                <h3>Building ML understanding from engineering fundamentals.</h3>
-              </div>
-            </div>
-            <p class="case-summary">Developing practical machine-learning skills around data preparation, model evaluation, experimentation, and the production concerns that turn a model into a usable software capability.</p>
-            <div class="tag-row"><span>Python</span><span>Data</span><span>Models</span><span>Evaluation</span><span>Production thinking</span></div>
-          </div>
-        </article>
+
       </div>
     </section>
 
@@ -204,24 +223,38 @@
         </div>
 
         <div class="capability-grid">
-          <article class="capability reveal">
+          <article class="capability spotlight reveal">
             <span class="capability-number">01</span>
             <h3>Integration engineering</h3>
             <p>Interfaces, APIs, mapping, transformation, validation, operational diagnostics, and the failure paths between systems.</p>
             <div class="capability-meta">SAP · APIs · Data flows</div>
           </article>
-          <article class="capability reveal">
+          <article class="capability spotlight reveal">
             <span class="capability-number">02</span>
             <h3>Software engineering</h3>
             <p>Maintainable application logic, state management, testing, debugging, source control, and release-oriented development.</p>
             <div class="capability-meta">Kotlin · Python · Git · CI/CD</div>
           </article>
-          <article class="capability reveal">
+          <article class="capability spotlight reveal">
             <span class="capability-number">03</span>
             <h3>Product engineering</h3>
             <p>Turning requirements into coherent behavior, with attention to UX, accessibility, persistence, edge cases, and polish.</p>
             <div class="capability-meta">Android · Compose · Material 3</div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell focus-wrap" aria-labelledby="focus-title">
+      <div class="focus-panel spotlight reveal">
+        <div class="focus-heading">
+          <p class="kicker">Current focus</p>
+          <h2 id="focus-title">What I’m sharpening now.</h2>
+        </div>
+        <div class="focus-items">
+          <div><span>Product</span><strong>PuzzleVerse</strong><p>Release engineering, product polish, and dependable state across puzzle systems.</p></div>
+          <div><span>Enterprise</span><strong>Integration depth</strong><p>Reliable data exchange, lifecycle thinking, diagnostics, and maintainable interfaces.</p></div>
+          <div><span>Learning</span><strong>Machine learning</strong><p>Models, evaluation, data workflows, and how ML fits into production software.</p></div>
         </div>
       </div>
     </section>
@@ -275,7 +308,7 @@
         </div>
       </div>
 
-      <div class="section-shell stack-panel reveal">
+      <div class="section-shell stack-panel spotlight reveal">
         <div class="stack-title"><span class="terminal-prompt">$</span> toolkit --current</div>
         <div class="stack-list">
           <span>SAP Integration</span><span>API Design</span><span>Data Mapping</span><span>Kotlin</span><span>Jetpack Compose</span><span>Android</span><span>MVVM</span><span>Git</span><span>CI/CD</span><span>Python</span><span>Machine Learning</span>

@@ -4,19 +4,28 @@
   const themeMeta = document.querySelector('meta[name="theme-color"]');
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
-  const savedTheme = localStorage.getItem('portfolio-theme');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const desktopNav = window.matchMedia('(min-width: 781px)');
+
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem('portfolio-theme');
+  } catch {
+    savedTheme = null;
+  }
+
   const preferredLight = window.matchMedia('(prefers-color-scheme: light)').matches;
 
-  const setTheme = (theme) => {
+  const setTheme = (theme, persist = true) => {
     root.dataset.theme = theme;
-    localStorage.setItem('portfolio-theme', theme);
-    if (themeToggle) {
-      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    if (persist) {
+      try { localStorage.setItem('portfolio-theme', theme); } catch { /* storage may be blocked */ }
     }
+    themeToggle?.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     themeMeta?.setAttribute('content', theme === 'dark' ? '#0a0c0f' : '#f6f7f4');
   };
 
-  setTheme(savedTheme || (preferredLight ? 'light' : 'dark'));
+  setTheme(savedTheme || (preferredLight ? 'light' : 'dark'), Boolean(savedTheme));
 
   themeToggle?.addEventListener('click', () => {
     setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
@@ -37,15 +46,25 @@
 
   nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 
+  document.addEventListener('click', (event) => {
+    if (!nav?.classList.contains('is-open')) return;
+    if (nav.contains(event.target) || menuToggle?.contains(event.target)) return;
+    closeMenu();
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
+  });
+
+  desktopNav.addEventListener?.('change', (event) => {
+    if (event.matches) closeMenu();
   });
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
   const revealItems = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window && !reducedMotion.matches) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -71,22 +90,41 @@
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
       navLinks.forEach((link) => {
-        link.classList.toggle('is-active', link.getAttribute('href') === `#${visible.target.id}`);
+        const active = link.getAttribute('href') === `#${visible.target.id}`;
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
       });
     }, { rootMargin: '-28% 0px -60% 0px', threshold: [0, 0.1, 0.25] });
     sections.forEach((section) => sectionObserver.observe(section));
   }
 
   const progress = document.querySelector('.scroll-progress span');
+  let progressFrame = 0;
   const updateProgress = () => {
+    progressFrame = 0;
     if (!progress) return;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const value = maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 0;
     progress.style.width = `${value * 100}%`;
   };
+  const scheduleProgress = () => {
+    if (progressFrame) return;
+    progressFrame = requestAnimationFrame(updateProgress);
+  };
   updateProgress();
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
+  window.addEventListener('scroll', scheduleProgress, { passive: true });
+  window.addEventListener('resize', scheduleProgress);
+
+  if (window.matchMedia('(pointer: fine)').matches && !reducedMotion.matches) {
+    document.querySelectorAll('.spotlight').forEach((element) => {
+      element.addEventListener('pointermove', (event) => {
+        const rect = element.getBoundingClientRect();
+        element.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
+        element.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
+      }, { passive: true });
+    });
+  }
 
   const copyButton = document.querySelector('.copy-link');
   const toast = document.querySelector('.toast');
