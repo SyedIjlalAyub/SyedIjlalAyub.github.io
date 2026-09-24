@@ -8,6 +8,7 @@ on:
       - .github/workflows/exact-mirror-puzzleverse-v2.yml
       - .github/scripts/exact-mirror-v2.py
       - .github/scripts/exact-mirror-audit.cjs
+      - .github/scripts/apply-site-overlay.py
   workflow_dispatch:
 
 permissions:
@@ -93,6 +94,20 @@ jobs:
             "$SOURCE_ORIGIN" \
             "http://127.0.0.1:8765" \
             "$AUDIT_DIR"
+
+      - name: Add the local Privacy Policy footer link
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # The live PuzzleVerse site is verified first. This is the single
+          # intentional homepage overlay on top of the ditto mirror.
+          python3 .github/scripts/apply-site-overlay.py \
+            --site "$MIRROR_DIR" \
+            --privacy-source puzzleverse-privacy/index.html
+
+          grep -Fq 'href="/puzzleverse-privacy/"' "$MIRROR_DIR/index.html"
+          test -s "$MIRROR_DIR/puzzleverse-privacy/index.html"
 
       - name: Replace the previous GitHub Pages copy
         shell: bash
